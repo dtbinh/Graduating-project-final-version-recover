@@ -1,0 +1,50 @@
+Coisas para capitulo de regiao de atracao
+
+LMIs:
+
+\begin{equation}\begin{bmatrix}\textbf{1}&b_k'\\b_k&P(\alpha)\end{bmatrix} \geq 0,\quad k = 1, ..., q
+\end{equation}\label{eq:th1_largest_set}
+\begin{equation}P(\alpha) -  \beta I < 0
+\end{equation}\label{eq:th1_enlargment_of_largest_set}
+
+Finalmente, s\~{a}o aplicadas as LMIs das equa\c{c}\~{o}es \ref{eq:th1_largest_set} e \ref{eq:th1_enlargment_of_largest_set}, que permitem a obten\c{c}\~{a}o do resultado cr\'{i}tico para o qual o sistema \'{e} est\'{a}vel. Esta \'{u}ltima condi\c{c}\~{a}o \'{e} aplicada para que a compara\c{c}\~{a}o entre este m\'{e}todo e o m\'{e}todo proposto neste trabalho seja justa.
+
+\begin{bmatrix}\textbf{1}&b_k'\\b_k&P\end{bmatrix} \geq 0,\quad k = 1, ..., q\\
+P -  \beta I < 0 
+
+\subsection{M\'{e}todo 1: Estabilidade do sistema com din\^{a}mica linearizada e m\'{e}todo Lyapunov com $P$ constante}
+
+Este m\'{e}todo consiste em obter, a partir do modelo n\~{a}o-linear, um modelo linearizado segundo as t\'{e}cnicas cl\'{a}ssicas encontradas na literatura. Nesta se\c{c}\~{a}o ser\'{a} utilizado o m\'{e}todo de lineariza\c{c}\~{a}o por s\'{e}rie de Taylor. E em seguida, \'{e} aplicada a fun\c{c}\~{a}o de Lyapunov para obten\c{c}\~{a}o de uma matriz $P$ definida positiva, tal que o sistema seja est\'{a}vel.
+
+Conforme estabelecido pela defini\c{c}\~{a}o da estabilidade de Lyapunov, as LMIs necess\'{a}rias para a determina\c{c}\~{a}o da estabilidade do sistema tal que a matriz $P$ n\~{a}o dependa das fun\c{c}\~{o}es de pertin\^{e}ncia, ou seja, para $P$ constante, equivalem a
+
+\begin{equation}\label{eq:LMIs_est_met_1}
+\begin{cases}
+P \geq 0\\
+A'P + PA <= 0
+\end{cases}
+\end{equation}
+
+em que $A$ \'{e} uma matriz pertencente ao $\rm I\!R^{n \times n}$ cujos elementos independem dos estados $n$ do sistema. O  Exemplo \ref{ex:example2_LPJ12_non_linear_system}, quando na forma matricial, como visto no cap\'{i}tulo anterior, possui um elemento n\~{a}o-linear dependente do estado $x_1$. Portanto, ser\'{a} necess\'{a}rio linearizar o sistema tal que se obtenha a matriz $A$ no formato requerido por este m\'{e}todo.
+
+Para se obter o  modelo linearizado o Exemplo \ref{ex:example2_LPJ12_non_linear_system}, utilizou-se o m\'{e}todo de lineariza\c{c}\~{a}o por s\'{e}rie de Taylor em torno da origem, tamb\'{e}m conhecida como s\'{e}rie de Maclaurin\footnote{Para se obter o modelo linearizado do sistema, obteve-se a representa\c{c}\~{a}o deste na forma matricial $\dot{\textbf{x}} = A\textbf{x}$ e aplicou-se a fun\c{c}\~{a}o $taylor(A, x^*)$ do MatLab, em que $x^* = 0$.}.
+
+O modelo linearizado \'{e} apresentado na Equa\c{c}\~{a}o \ref{eq:ex_LPJ12_lin}.
+
+\begin{equation}\label{eq:ex_LPJ12_lin}
+\begin{cases}\dot{x}_1 = -2x_1 + 4x_2\\
+\dot{x}_2= -(1 + \dfrac{\lambda}{2})x_1 - 2x_2
+\end{cases},\qquad \lambda = 20
+\end{equation}
+
+Assim, a matriz $A$ do modelo linearizado ser\'{a} dada por
+
+\begin{equation}A = \begin{bmatrix}-2&4\\-(1 + \dfrac{\lambda}{2})&-2\end{bmatrix},\qquad \lambda = 20
+\end{equation}\label{eq:ex_LPJ12_lin}
+
+Resolvendo as LMIs necess\'{a}rias para a verifica\c{c}\~{a}o da estabilidade do modelo linearizado, apresentadas na Equa\c{c}\~{a}o \ref{eq:LMIs_est_met_1}, verifica-se que o sistema \'{e} est\'{a}vel para a regi\~{a}o poli\'{e}drica $\chi$ e $\lambda = 20$.
+
+A obten\c{c}\~{a}o dos valores m\'{a}ximos e m\'{i}nimos de $\lambda$ para os quais o o sistema permanece est\'{a}vel para o M\'{e}todo 1 foram obtidos variando-se o valor deste par\^{a}metro e resolvendo as LMIs, o valor m\'{a}ximo de $\lambda$ ser\'{a} o maior valor deste par\^{a}metro para o qual o ponto de equil\'{i}brio permanece est\'{a}vel, ou seja, $P$ \'{e} semidefinida positiva. Para o limite superior assumiu-se inicialmente $\lambda = 0$ e este valor foi aumentado em passos de 0.1 at\'{e} que o ponto de equil\'{i}bio deixa-se de ser est\'{a}vel. O valor m\'{i}nimo de $\lambda$ foi o obtido de forma an\'{a}loga, por\'{e}m diminuindo-se seu valor em passos de 0.1.
+
+Os limitantes inferior e superior de $\lambda$ dentre os quais a origem se mant\'{e}m localmente est\'{a}vel foram obtidos, sendo, respectivamente
+\begin{align*}\lambda_{min_1} &= -3.9000\\\lambda_{max_1} &= 4.0000e+12\end{align*}

@@ -1,0 +1,202 @@
+% Classe default, de acordo com o modelo:
+\documentclass[11pt,a4paper,openright,titlepage,oneside]{book}
+
+% Pacotes
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[thmmarks,amsmath]{ntheorem}%\usepackage{amsthm}
+\usepackage{boxedminipage}
+\usepackage{geometry}
+\usepackage{theorem}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{url}
+\usepackage{afterpage}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{makeidx}
+\usepackage{indentfirst}
+% \usepackage{epstopdf} %Allows compile pdftex documents with eps figs.
+\usepackage{graphicx}
+\usepackage[suffix=]{epstopdf}
+\usepackage{epsfig}
+\usepackage{mathtools}
+
+\graphicspath{{./figs/}}
+\newtheorem{example}{Exemplo}[section]
+\newtheorem{defn}{Definição}
+\newtheorem{theorem}{Teorema}
+\newtheorem{observation}{Observação}
+\newtheorem{lemma}{Lema}
+\newtheorem{proof}{Prova}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+
+% Escolher um dos seguintes formatos:
+%\usepackage{ft1unb} % segue padrão de fonte Times
+\usepackage{ft2unb} % segue padrão de fontes do Latex
+
+\makeindex
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compilações parciais: com o comando abaixo, selecione apenas os capitulos
+% que deseja compilar. Por exemplo, veja o que acontece se descomentar a
+% linha abaixo:
+%\includeonly{cap_ModelagemSisNaoLinearesporFuzzyTS}
+%\includeonly{cap_EstabilidadeSisNaoLineares}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documento principal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\pagestyle{empty}
+
+\grau{Engenheira de Controle e Automação} \tipodemonografia{TRABALHO DE GRADUAÇÃO}
+
+\titulolinhai{ANÁLISE DE ESTABILIDADE E ESTIMAÇÃO}
+\titulolinhaii{ DE REGIÃO DE ATRAÇÃO  DE SISTEMAS}
+\titulolinhaiii{ NÃO LINEARES POR MEIO DE}
+\titulolinhaiv{ MODELOS FUZZY TAKAGI-SUGENO}
+
+% um nome para segundo autor.
+\autori{Izabella Thaís Oliveira Gomes}
+\autorii{}
+% \autoriii{Nome do Autor 3}
+\autoriii{} % descomente esta linha se não houver terceiro autor.
+
+
+\membrodabancai{Eduardo Stockler Tognneti, ENE/UnB}
+\membrodabancaifuncao{Orientador}
+\membrodabancaii{João Yoshiyuki Ishihara, ENE/UnB}
+\membrodabancaiifuncao{Examinador interno}
+\membrodabancaiii{José Alfredo Ruiz Vargas, ENE/UnB}
+\membrodabancaiiifuncao{Examinador  interno}
+\membrodabancaiv{}
+\membrodabancaivfuncao{}
+\membrodabancav{}
+\membrodabancavfuncao{}
+
+
+\mes{dezembro}
+\ano{2017}
+
+
+\capaprincipal
+\capaassinaturas
+
+%\includegraphics[width = 21cm]{contra-capa_tg_izabella-gomes_2017-2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ficha catalográfica
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{ficha_catalografica}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dedicatorias
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+
+\dedicatoriaautori{Aos meus amados pais, Claudio e Tereza, e à minha amada irmã, Hellen.}
+
+\dedicatoriaautorii{Dedicatória do autor 2}
+
+\dedicatoriaautoriii{Dedicatória do autor 3}
+
+\dedicatoria
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agradecimentos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto de agradecimentos do primeiro autor
+\agradecimentosautori{Ao Deus que me sustenta e me capacita em todos os momentos, mesmo em meio às minhas limitações, eu agradeço. Ao meu orientador, Professor Dr. Eduardo Stockler Tognetti, obrigada por depositar em minhas mãos a missão de redigir este trabalho, por acreditar em meu potencial e por ser tão atencioso. Cada conversa, reunião, email respondido e cada explicação anotada em folhas de rascunho foram essenciais para a conclusão deste trabalho. Agradeço à Professora Dra Carla Denise Castanho, que me abriu tantas portas no início do meu curso de graduação, com quem tanto aprendi e em quem tanto me espelho. À minha amada amiga Letícia van der Ploeg, o maior presente que a graduação me trouxe, obrigada por ser minha companheira desde o primeiro até o último momento deste curso. Aos queridos amigos que granjeei durante o curso e que levo para a vida toda, obrigada por tornarem os desafios da universidade tão mais fáceis de serem enfrentados. Aos meus colegas de gestão na Mecajun, os momentos vividos junto a vocês me fizeram crescer pessoal e profissionalmente, obrigada. Aos meus amigos da UnBall, sentirei saudades dos momentos de descontração e do companheirismo que vivenciamos dentro e fora das competições. Às minhas amigas-irmãs Nayhane, Jhenefer e Raquel, às minhas amiguinhas Rauenya e Analine e à tia Silvana, obrigada por cada oração e por não desistirem de mim por eu ter que me ausentar tanto durante graduação. Aos meus pais e minha irmã, obrigada por viverem comigo cada batalha que tive que lutar durante a graduação, vocês são meu refúgio nos momentos de dificuldades.}
+
+% Texto de agradecimentos do segundo autor. Caso não tenha um segundo autor, este texto não 
+% será mostrado
+\agradecimentosautorii{Não será necessário.}
+
+% Texto de agradecimentos do segundo autor. Caso não tenha um terceiro autor, este texto não 
+% será mostrado
+\agradecimentosautoriii{Não será necessário.}
+
+% Comando para criar a página de agradecimentos
+\agradecimentos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Resumo: arquivo resumo.tex editável no Scientific Word
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{resumos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listas de conteúdo, figuras e tabelas.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sumario
+\listadefiguras
+% \listadetabelas
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lista de simbolos.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{simbolos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Corpo principal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
+
+% *** Introducao ***
+\include{cap_Introducao}
+
+% *** Modelagem de sistemas nãoilineares por fuzzy Takagi-Sugeno ***
+\include{cap_ModelagemSisNaoLinearesporFuzzyTS}
+
+% *** Estabilidade de Sistemas não lineares ***
+\include{cap_EstabilidadeSisNaoLineares}
+
+% *** Região de atração ***
+\include{cap_RegiaoDeAtracao}
+
+% *** Conclusões
+\include{cap_Conclusoes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Referencias bibliograficas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{abnt-num} % use este estilo para ABNT numerico
+%\bibliographystyle{abnt-alf} % use este estilo para ABNT alfa-numerico
+\renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS}
+\addcontentsline{toc}{chapter}{REFERÊNCIAS BIBLIOGRÁFICAS}
+\bibliography{relatorio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Anexos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\anexos
+\makeatletter % não retirar estes comandos
+\renewcommand{\@makechapterhead}[1]{%
+  {\parindent \z@ \raggedleft \setfontarial\bfseries 
+        \LARGE \thechapter. \space\space 
+    \uppercase{#1}\par
+    \vskip 40\p@
+  }
+}
+\makeatother
+
+%\include{anexo_Codigos}
+%\refstepcounter{noAnexo}
+
+\end{document}
+

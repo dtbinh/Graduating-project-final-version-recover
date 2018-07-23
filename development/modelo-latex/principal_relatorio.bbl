@@ -1,0 +1,126 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.42.2.1 }
+
+\bibitem{bookboydl:1994}
+\abntrefinfo{S, Ghaoui e V.Balakrishnan}{S; GHAOUI; V.BALAKRISHNAN}{1994}
+{S, B.; GHAOUI, E.~F. E.; V.BALAKRISHNAN, V. \emph{Linear Matrix Inequalities
+  in System and Control Theory}. [S.l.]: Philadelphia, PA: SIAM Studies in
+  Applied Mathematics, 1994.}
+
+\bibitem{MPSM:2009}
+\abntrefinfo{Mozelli et al.}{MOZELLI et al.}{2009}
+{MOZELLI, L. et al. Reducing conservativeness in recent stability conditions of
+  ts fuzzy systems.
+\emph{EL SEVIER}, 2009.}
+
+\bibitem{article:LPJ:2011}
+\abntrefinfo{Lee, Park e Joo}{LEE; PARK; JOO}{2011}
+{LEE, D.~H.; PARK, J.~B.; JOO, Y.~H. A fuzzy lyapunov function approach to
+  estimating the domain of attraction for continuous-time takagi–sugeno fuzzy
+  systems.
+\emph{El Sevier}, v.~185, p. 230--248, 2011.}
+
+\bibitem{article:zadeh:1990}
+\abntrefinfo{Zadeh}{ZADEH}{1990}
+{ZADEH, L.~A. Fuzzy sets and systems.
+\emph{International Journal of General Systems}, v.~17, p. 129 -- 138, 1990.}
+
+\bibitem{articlets:1985}
+\abntrefinfo{Takagi e Sugeno}{TAKAGI; SUGENO}{1985}
+{TAKAGI, T.; SUGENO, M. Fuzzy identification of systems and its applications to
+  modeling and control.
+\emph{IEEE Transactions on Systems}, v.~15, p. 116 -- 132, 1985.}
+
+\bibitem{booktw:2003}
+\abntrefinfo{Tanaka e Wang}{TANAKA; WANG}{2001}
+{TANAKA, K.; WANG, H.~O. \emph{Fuzzy Control Systems Design and Analysis: A
+  Linear Matrix Inequality Approach}. [S.l.]: John Wiley and Sons, Inc, 2001.}
+
+\bibitem{bookogata:2003}
+\abntrefinfo{Ogata}{OGATA}{2003}
+{OGATA, K. \emph{Engenharia de Controle Moderno}. [S.l.]: Prentice-Hall, 2003.}
+
+\bibitem{bookkhalil:2003}
+\abntrefinfo{Khalil}{KHALIL}{2002}
+{KHALIL, H.~K. \emph{Nonlinear Systems}. [S.l.]: Prentice-Hall, 2002.}
+
+\bibitem{article:johansson:2000}
+\abntrefinfo{Johansson}{JOHANSSON}{2000}
+{JOHANSSON, K.~H. The quadruple-tank process: a multivariable laboratory
+  process with an adjustable zero.
+\emph{IEEE Transactions on Control and Systems Technology}, v.~8, n.~1, p. 456
+  -- 465, May 2000.}
+
+\bibitem{article:roinila:2008}
+\abntrefinfo{Roinila, Vilkko e Antti}{ROINILA; VILKKO; ANTTI}{2008}
+{ROINILA, T.; VILKKO, M.; ANTTI, J. Corrected mathematical model of quadruple
+  tank process.
+\emph{17th Wolrd Congress - The International Federation of Automatic Control},
+  v.~41, p. 11678--11683, 2008.}
+
+\bibitem{inproc:arthur:2015}
+\abntrefinfo{Macêdo e Wiira}{MACêDO; WIIRA}{2015}
+{MACêDO, A.~M.; WIIRA, M. C. d.~F. Estudo de tÉcnicas de controle aplicadas a
+  uma bancada didÁtica de quatro tanques. In:  \emph{Trabalho de Graduação,
+  Universidade de Brasília}. [S.l.: s.n.], 2015.}
+
+\bibitem{techreport:seatle}
+\abntrefinfo{Kaehler}{KAEHLER}{2004}
+{KAEHLER, S.~D. \emph{FUZZY LOGIC - AN INTRODUCTION}.
+http://www.seattlerobotics.org/encoder/mar98/fuz/flindex.html, 2004.}
+
+\bibitem{articlets:2009}
+\abntrefinfo{Sala}{SALA}{2009}
+{SALA, A. On the conservativeness of fuzzy and fuzzy-polynomial control of
+  nonlinear systems.
+\emph{EL SEVIER}, v.~33, p. 48–58, 2009.}
+
+\bibitem{inproc:hin:2004}
+\abntrefinfo{Hindi}{HINDI}{2004}
+{HINDI, H. A tutorial on convex optimization. In:  \emph{In Proceedings of the
+  23th American Control Conference}. [S.l.]: IEEE, 2004. p. 3252--3265.}
+
+\bibitem{inproc:MPT:2006}
+\abntrefinfo{Herceg et al.}{HERCEG et al.}{2013}
+{HERCEG, M. et al. {Multi-Parametric Toolbox 3.0}. In:  \emph{Proc.~of the
+  European Control Conference}. Z\"urich, Switzerland: [s.n.], 2013. p.
+  502--510. \url{http://control.ee.ethz.ch/~mpt}.}
+
+\bibitem{article:TOP:11b}
+\abntrefinfo{Tognetti, Oliveira e Peres}{TOGNETTI; OLIVEIRA; PERES}{2011}
+{TOGNETTI, E.~S.; OLIVEIRA, R. C. L.~F.; PERES, P. L.~D. Selective
+  {$\mathcal{H}_{2}$} and {$\mathcal{H}_{\infty}$} stabilization of
+  {T}akagi--{S}ugeno fuzzy systems.
+\emph{IEEE Transactions on Fuzzy Systems}, v.~19, n.~5, p. 890--900, October
+  2011.}
+
+\bibitem{Lofberg2004}
+\abntrefinfo{Löfberg}{LöFBERG}{2004}
+{LöFBERG, J. Yalmip : A toolbox for modeling and optimization in matlab. In:
+  \emph{In Proceedings of the CACSD Conference}. Taipei, Taiwan: [s.n.], 2004.}
+
+\bibitem{sedumi:2002}
+\abntrefinfo{Labit, Peaucelle e Henrion}{LABIT; PEAUCELLE; HENRION}{2002}
+{LABIT, Y.; PEAUCELLE, D.; HENRION, D. Sedumi interface 1.02: a tool for
+  solving lmi problems with sedumi. In:  \emph{Computer Aided Control System
+  Design, 2002. Proceedings. 2002 IEEE International Symposium}. Glasgow, UK:
+  [s.n.], 2002.}
+
+\bibitem{inproc:ROLMIP:2016}
+\abntrefinfo{Agulhari et al.}{AGULHARI et al.}{2012}
+{AGULHARI, C.~M. et al. The robust lmi parser: A toolbox to construct lmi
+  conditions for uncertain systems. In:  \emph{Congresso Brasileiro de
+  Automática (CBA 2012), Campina Grande, PB, Brasil}. [S.l.: s.n.], 2012.}
+
+\bibitem{article:tarbouriech:2009}
+\abntrefinfo{Tarbouriech et al.}{TARBOURIECH et al.}{2009}
+{TARBOURIECH, S. et al. Control design for bilinear systems with a guaranteed
+  region of stability: An lmi-based approach. In:  \emph{2009 17th
+  Mediterranean Conference on Control and Automation}. [S.l.: s.n.], 2009. p.
+  809--814.}
+
+\end{thebibliography}

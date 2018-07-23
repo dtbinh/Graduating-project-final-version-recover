@@ -1,0 +1,685 @@
+% !TeX spellcheck = pt_BR
+\documentclass[envcountsect]{beamer}
+
+\usepackage{times}
+\usepackage[latin1]{inputenc}
+\usepackage[portuges,brazil]{babel}
+\usepackage{mathptmx,amsmath,amssymb,epsfig,ae}
+\usepackage{dsfont}
+\usepackage{pifont,tikz}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage[accumulated]{beamerseminar}
+\usepackage{beamertexpower}
+%\usepackage{pmat}
+\usepackage{multirow,psfrag,subfigure}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+\usepackage{ifthen}
+\newcounter{frameeffects} 
+\setcounter{frameeffects}{1} % set to 1 to frame effects
+
+% BEAMER PARAMETERS
+%=============================================================================================
+% \setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=yellow!30]
+\usetheme{Warsaw}
+%\usecolortheme{whale}
+
+\setbeamerfont{Texto}{size=\footnotesize}
+\setbeamersize{text margin left=0.7cm}
+%\setbeamerfont{frametitle}{size=\Large,family=\rmfamily}
+\definecolor{azul}{rgb}{0.2,0.2,0.7}
+\setbeamercolor{frametitle right}{bg=structure.fg}
+%\setbeamercolor{structure}{fg=azul}
+%\setbeamerfont{title}{size=\Large,series=\bfseries,shape=\itshape,family=\rmfamily}
+
+\setbeamertemplate{theorems}[numbered]
+\setbeamercovered{dynamic}
+% \definecolor{dourado}{rgb}{0.855,0.648,0.125}
+% \setbeamercolor{title}{fg=Goldenrod}
+
+\setbeamertemplate{navigation symbols}{}
+\mode<beamer>
+{
+\setbeamertemplate{footline}
+{
+\leavevmode
+\hbox{
+\begin{beamercolorbox}[wd=.40\paperwidth,ht=2.5ex,dp=1.125ex,center]{author in head/foot}
+\usebeamerfont{title in head/foot}\insertshortauthor\hspace{.3cm}
+\end{beamercolorbox}%
+
+\begin{beamercolorbox}[wd=.50\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}
+\usebeamerfont{author in head/foot}\hspace{.3cm}\insertshorttitle
+\end{beamercolorbox}%
+
+\begin{beamercolorbox}[wd=.09\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}
+ \usebeamerfont{author in head/foot}\insertframenumber/\inserttotalframenumber
+\end{beamercolorbox}%
+}%
+\vskip0pt}
+}
+
+\mode<handout>{
+\setbeamertemplate{footline}{\centerline{\insertframenumber}}
+}
+
+\setbeamertemplate{headline}
+{%
+\begin{beamercolorbox}{section in head/foot}
+\vskip2pt\insertnavigation{\paperwidth}\vskip5pt
+\end{beamercolorbox}%
+}
+\AtBeginSection[]{\frame{\frametitle{Sum�rio}\tableofcontents[current]}} %este aqui para tirar efeitos 
+
+
+% GENERAL PARAMETERS
+%=============================================================================================
+% Captions (figures and tables)
+%\setlength\belowcaptionskip{0.1mm}
+%\setlength\abovecaptionskip{0.1mm}
+
+% DEFINITIONS & NEW COMMANDS
+%=============================================================================================
+\newcommand\hi{\hspace*{4mm}}
+\newcommand\vi{\vspace{\baselineskip}}
+\newcommand\vii{\vspace{0.5\baselineskip}}
+\newcommand{\tit}[1]{{\large \textbf{#1}\\[2mm]}}
+\def \seta {$\rightsquigarrow$~}
+\def \Seta {$\Rightarrow$~}
+\newcommand\redbu{~\begin{tikzpicture} \shade[ball color=red](1,0)circle(0.6ex); \end{tikzpicture} }
+%\newcommand\redlto{~~\begin{tikzpicture} \shade[ball color=red](1,0)circle(0.4ex); \end{tikzpicture} }
+\newcommand\redlto{{\color{red} \bf $\leadsto$}~}
+\newcommand{\bblockize}[1]{\begin{block}{#1} \begin{itemize}}
+\newcommand{\eblockize}{\end{itemize} \end{block}}
+\newcommand{\alertb}[1]{{\color{blue}#1}}
+
+\def\comp{{\mathrm {comp}}}
+\def\polya{P\'{o}lya}
+\newtheorem{theo}{Theorem}
+\newtheorem{lem}{Lemma}
+\def\nat{\mathds{N}}
+\def\sym{\mathds{S}}
+\newcommand{\Hi}{{\mathcal{H}}_{\infty}}
+\newcommand{\Hd}{{\mathcal{H}}_{2}}
+\newcommand{\bref}[1]{\mbox{(\ref{#1})}}
+\def\real{\mathds{R}} % R de reais
+\newcommand{\Kset}{\mathcal{K}}
+\newcommand{\ones}{\sigma}
+\newcommand{\verm}[1]{\textcolor{red}{#1}}
+\newcommand{\azul}[1]{\textcolor{blue}{#1}}
+
+\newtheorem{teo}{\noindent{\bf Teorema} }
+\newtheorem{lema}{\noindent{\bf Lema} }
+\newtheorem{problema}{\noindent{\bf Problema} }
+%\theoremstyle{definition}
+\newtheorem{definicao}{\noindent{\bf Defini��o} }
+\theoremstyle{example}
+\newtheorem{exemplo}{Exemplo}
+
+\newenvironment<>{myblock}[1]{%
+\begin{actionenv}#2%
+    \def\insertblocktitle{#1}%
+    \par%
+    \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=gray!40}
+    \setbeamercolor{block body}{fg=black,bg=yellow!30}
+    \setbeamercolor{itemize item}{fg=black}
+    \setbeamerfont{block title}{size=\footnotesize}
+    %\setbeamertemplate{itemize item}[triangle]
+    \setbeamercolor{structure}{fg=red}}
+    \usebeamertemplate{block begin}}
+    {\par\usebeamertemplate{block end}
+\end{actionenv}}
+\newcommand{\myblocksmall}[2]{
+%\begin{center}
+\begin{minipage}{#1}
+\begin{myblock}{}
+\begin{center}
+#2
+\end{center}
+\end{myblock}
+\end{minipage}
+%\end{center}
+}
+
+
+
+
+
+%CAPA
+\parindent 0pt
+
+\title[Projeto de PID via LMIs de sist. 2a. ordem com atraso]
+{Projeto de controlador PID via LMIs com aloca��o de polos para sistema de segunda ordem com atraso no tempo}
+\author[ Wiira \& Borges \& Tognetti (UnB)]{Mayara C. F. Wiira \and Renato Alves Borges \and Eduardo Stockler Tognetti}
+\institute[UnB]{Universidade de Bras�lia\\[1mm]
+\includegraphics[width=0.1\linewidth]{unb.eps}}
+\vi
+%\date{\hspace{0cm} \includegraphics[width=0.5\linewidth]{./figs/sbai15logo.eps}}
+\date{CBA 2016\\
+3 a 7 de outubro -- Vit�ria/ ES}
+
+
+
+%=============================================================================================
+\begin{document}
+
+{
+\setbeamertemplate{headline}{}
+\frame{\titlepage}
+}
+
+
+%\section*{TCA-III: Teoria de Controle e Aplica��es III}
+%\section*{TCA-III: - 09:00AM}
+\part{T�picos}
+%\frame{\frametitle{Estrutura da Apresenta��o}\tableofcontents[part=1]}
+
+\usebeamerfont{Texto}
+
+%=============================================================================================
+\section{Introdu��o}
+\subsection*{Intro}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Introdu��o}
+
+\begin{exampleblock}{Motiva��o}
+\ifthenelse{\value{frameeffects}=0}{\begin{itemize}}{\begin{itemize}[<+->]}
+\item PID \seta cerca de $90\%$ das malhas na ind�stria (Gon�alves et al., 2008);
+\item T�cnicas cl�ssicas bem consolidadas;
+\item \alert{Garantias de desempenho e estabilidade para plantas com atraso, incertezas, n�o-linearidades, 
+variantes no tempo etc?}
+\item Abordagens baseadas no uso de Desigualdades Matriciais Lineares (LMIs);
+\item D-estabilidade como crit�rio de desempenho para muitas aplica��es;
+\item Atraso no tempo \seta n�mero infinito de ra�zes do polin�mio caracter�stico;
+\item Condi��es LMIs para a estabilidade de sistemas com atraso (Chu, 2006).
+\end{itemize}
+\end{exampleblock}
+
+\vii
+
+\ifthenelse{\value{frameeffects}=0}{}{\pause}
+
+\begin{alertblock}{Objetivo:}
+\begin{itemize}
+\setbeamertemplate{itemize item}[triangle]
+
+\item Apresentar condi��es LMIs para o projeto de controladores PIDs com aloca��o de polos para fun��es de transfer�ncia de segunda ordem com incertezas e atraso no tempo.
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+
+%==================================================================================
+\section{Formula��o do problema}
+\subsection*{ModMat}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Formula��o do problema}
+	
+	\redbu Seja o sistema de segunda ordem com atraso no tempo
+	\begin{equation}
+	\label{eq:FT1}
+	G(s) = \frac{Y(s)}{U(s)} = \frac{b_1 s + b_0}{s^2 + a_1 s + a_0} e^{-\tau s}
+	\end{equation}
+	e a seguinte representa��o no espa�o de estados aumentado
+	\begin{equation}
+	\label{eq:Espa�oDeEstados}     
+	\begin{aligned}
+	\dot{x}(t) &= Ax(t) + Bu(t-\tau)   \\ %[3mm]
+	y(t) &= Cx(t)                %\\ [3mm]
+	\end{aligned}
+	\end{equation}
+	
+	\vi
+	
+	\redbu Vetor de estados dado por 
+	$x(t) = [x_1(t) ~~ x_2(t) ~~ \int{y(t)}]'$
+	e as matrizes $A$, $B$ e $C$ s�o
+	
+	\vii
+	
+	\begin{equation}
+	\label{eq:MatrizesABC}
+	A =
+	\begin{bmatrix}
+	0    & 1    & 0\\
+	-a_0 & -a_1 & 0\\
+	b_0  & b_1  & 0
+	\end{bmatrix}
+	,
+	B =
+	\begin{bmatrix}
+	0\\1\\0
+	\end{bmatrix}
+	,
+	C^{'} =
+	\begin{bmatrix}
+	b_0\\b_1\\0
+	\end{bmatrix}
+	\end{equation}
+	
+\end{frame}
+
+
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Formula��o do problema}
+
+\redbu O controlador que se deseja projetar � da forma
+\begin{equation}
+\label{eq:PID}
+PID(s) = k_p + \frac{k_i}{s} + k_d s
+\end{equation}
+e a lei de controle pode ser dada por
+\begin{equation}
+\label{eq:u(t)}
+u(t) =
+\begin{bmatrix}
+k_p & k_d & k_i
+\end{bmatrix} 
+ \begin{bmatrix}
+b_0 & b_1 & 0\\
+0   & b_0 & 0\\
+0   & 0   & 1
+\end{bmatrix}
+x(t) + k_d b_1 \dot{x}_2(t)
+\end{equation}
+ou
+\begin{equation}
+\label{eq:u}
+\alert{u(t) = KFx(t)}
+\end{equation}
+com 
+\begin{equation}
+\label{eq:K}
+K = 
+\begin{bmatrix}
+\frac{k_p}{a - k_d b_1} & \frac{k_d}{a - k_d b_1} & \frac{k_i}{a - k_d b_1} \\
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\label{eq:F}
+F =
+\begin{bmatrix}
+b_0      & b_1           & 0\\
+-b_1 a_0 & b_0 - b_1 a_1 & 0\\
+0        & 0             & 1
+\end{bmatrix}
+\end{equation}
+
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Formula��o do problema}
+\redbu Considere tamb�m um vetor de dist�rbio $w(t)$ para representar uma incerteza n�o estruturada $\Delta(s)$, ou seja,
+\begin{equation}
+\label{eq:W(s)}
+W(s) = \Delta(s) Y(s)
+\end{equation}
+onde $\Delta(s)$ � uma fun��o de transfer�ncia causal com norma $H_{\infty}$ limitada.
+
+%\vi
+
+\begin{columns}
+\column{0.6\linewidth}
+
+\redbu Sistema em malha fechada
+\begin{align}
+  \begin{cases}
+	  \label{eq:SisMF}     
+		\dot{x}(t) = Ax(t) + A_d x(t-\tau) +  B_w w(t) \\[3mm]
+		      y(t) = Cx(t) +d_w w(t)                   
+  \end{cases}
+\end{align}
+em que $A_d = BKF$, e $B_w$ e $d_w$ ponderam a influ�ncia do dist�rbio no processo, e
+\begin{equation}
+\label{eq:FT_Guy0}
+G_{uy}(s) = \frac{G(s)}{1 - C (sI-A)^{-1} B_w \Delta(s) - d_w \Delta(s)}
+\end{equation}
+
+\column{0.5\linewidth}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/Diagrama_blocos.eps}
+\caption{Diagrama de blocos do sistema em malha fechada.}
+\label{fig:blocos}
+\end{figure}
+
+\end{columns}
+
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Aloca��o de polos}
+
+\redbu Regi�o para aloca��o de polos para
+assegurar taxa de decaimento m�nima das trajet�rias
+do sistema em malha fechada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{figs/Regiao_polos.eps}
+\caption{Regi�o aberta � esquerda de $-\delta$ do plano-s com $\delta>0$.}
+\label{fig:polos}
+\end{figure}
+
+
+\end{frame}
+
+
+%==================================================================================
+\section{Resultado principal}
+\subsection*{Resultados}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Resultado principal}
+
+\begin{teo}\label{Teorema1}
+Se existirem matrizes sim�tricas positivas definidas $R, M \in \Re ^{3x3}$ e $L \in \Re ^ {1x3}$, tal que, para um dado $\delta > 0$
+\begin{equation} \label{LMI_Teo1}
+\left[
+\begin{array}{cc} 
+\Upsilon_{11} & \tau^2 (e^{\delta\tau}B)L + \tau R\\
+\star & -\tau^2 M - \tau R  \\
+\star & \star \\
+\star & \star \\
+\star & \star
+\end{array}
+%\right. \\ 
+%\left.
+\begin{array}{ccc} 
+\tau^2 R (A + \delta I)' & \tau R C' & \tau B_w \\
+\tau^2 L'(e^{\delta\tau}B)' & 0 & 0 \\  
+-\tau R & 0 & \tau B_w \\
+\star & -I & d_w \\
+\star & \star & -\gamma I
+\end{array}
+\right]
+<0
+\end{equation}
+%
+\begin{equation*}
+\label{eq:Teo1}
+\Upsilon_{11}  = \tau^2 (R(A + \delta I)' + (A + \delta I)R + M) - \tau R
+\end{equation*}
+ent�o o sistema em malha fechada~(\ref{eq:SisMF}) � assintoticamente est�vel com $||\Delta(s)||_{\infty} < \sqrt{\gamma}$ e possui os polos alocados na regi�o � esquerda de $-\delta$. Os par�metros do PID s�o dados por:
+\begin{equation}
+\label{eq:kp_ki_kd}
+k_p = \frac{k_1}{1 + k_2 b_1} , k_i = \frac{k_2}{1 + k_2 b_1} , k_d = \frac{k_3}{1 + k_2 b_1}
+\end{equation}
+em que $
+K =
+\begin{bmatrix}
+k_1 & k_2 & k_3
+\end{bmatrix} 
+ = L(FR)^{-1}
+$.
+\end{teo}
+
+\end{frame}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Prova}
+
+\redbu Considera-se o funcional Lyapunov-Krasovskii
+\begin{align}
+  \label{eq:vdd}
+  v_{dd}(x(t)) &= x(t)'Px(t) + \int_{t-\tau}^{t} x(\theta)'Qx(\theta) d\theta  \notag \\
+	             &+ \int_{-\tau}^{0} \int_{t+\beta}^{t} \dot{x}(\theta)'P\dot{x}(\theta) d\theta d\beta
+\end{align}
+
+%\vi
+
+\begin{lema}[Gu, 2000]\label{Lema_Gu}
+Para qualquer matriz constante $M \in \Re ^{mxm}$, $M = M' > 0$, um escalar $\rho > 0$, uma fun��o vetorial $\omega: [0,\sigma]\rightarrow \Re^m$, tal que as integra��es a seguir s�o bem definidas, ent�o
+\fontsize{8}{8}\selectfont
+\begin{equation}
+\label{eq:Gu}
+\rho \int_{0}^{\rho} \omega'(\beta) M \omega(\beta) d\beta \geq \left(\int_{0}^{\rho} \omega(\beta)d\beta \right)' M \left(\int_{0}^{\rho} \omega(\beta)d\beta \right).
+\end{equation}
+\end{lema}
+%
+\[
+  \dot{v}_{dd} \leq  \dot{x}(t)'Px(t) + x(t)'Px(t) + x(t)'Qx(t)  
+	 - x_d'Qx_d + \tau \dot{x}(t)'P\dot{x}(t) - \frac{1}{\tau}\check{z}(t)'P\check{z}(t).
+\]
+
+%\vii
+
+\seta Uso do \textit{Bounded Real Lemma} (Boyd et al., 1994)
+
+\end{frame}
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Prova}
+
+\redbu Equa��o caracter�stica do sistema em malha fechada
+\begin{equation}
+\label{eq:F(s)}
+F(s) = det(sI-A-A_d e^{-s\tau})
+\end{equation}
+
+\vi
+
+Define-se a fun��o 
+\begin{align}
+  \label{eq:H(epsilon)}
+  H(\epsilon) &= F(\epsilon-\delta) = det(\epsilon I - \delta I - A - A_d e^{-(\epsilon-\delta)\tau})  \notag \\
+	            &= det(\epsilon I - \bar{A} - \bar{A}_d e^{\epsilon\tau})
+\end{align}
+onde $\bar{A} = A+\delta I$ e $\bar{A}_d = A_d e^{\delta\tau}$. 
+
+\vi
+
+\redbu Assim, se as ra�zes de $H(\epsilon) = 0$ satisfazem $Re(\epsilon)<0$, ent�o tem-se $Re(s)<0$ para as ra�zes de $F(s)$, o que conclui a demonstra��o.
+
+\end{frame}
+
+
+
+%==================================================================================
+\section{Exemplo num�rico}
+\subsection*{Exemplo num�rico}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplo num�rico}
+
+\redbu Considere o seguinte sistema de segunda ordem (Parada et al, 2011)
+\begin{equation}
+\label{eq:Ex_num}
+G(s) = \frac{6(s+1)}{(7s+1)(3s+1)-21\beta} e^{-5s}
+	= \frac{b_1 s + b_0}{s^2 + a_1 s + a_0 - \beta} e^{-5s}
+\end{equation}
+$|\beta| \leq \beta_{max}$ � um escalar incerto adicionado de modo a modelar os erros nos par�metros do sistema escolhido com $\beta_{max} = 0.999 a_0$.
+
+\vi
+
+\redbu Se considerarmos $\Delta(s) = \beta \Phi(s)$, com
+\begin{equation}
+\label{eq:phi}
+\Phi(s) = \frac{1}{s^2 + a_1 s + a_0}, \quad B_w = [0~~0~~0]' ~~ e ~~ d_w = 1
+\end{equation}
+ent�o o sistema pode ser escrito na forma 
+\begin{equation}
+\label{eq:FT_Guy}
+G_{uy}(s) = \frac{G_{nom}(s)}{1 - C (sI-A)^{-1} B_w \Delta(s) - d_w \Delta(s)},
+\quad G_{nom} = G(s, \beta=0)
+\end{equation}
+
+\vii
+
+\redbu  Observe que o escalar $\gamma$ � obtido por 
+\[ ||\Delta(s)||_{\infty} = |\beta| \cdot ||\Phi(s)||_{\infty} \leq \beta_{max} ||\Phi(s)||_{\infty} = \sqrt{\gamma}\]
+
+
+\end{frame}
+%
+%%---------------------------------------------------------------------------------------------
+%\begin{frame}
+%\frametitle{Exemplo num�rico}
+%
+%
+%\redbu  Observe que o escalar $\gamma$ � obtido por 
+%\[ ||\Delta(s)||_{\infty} = |\beta| \cdot ||\Phi(s)||_{\infty} \leq \beta_{max} ||\Phi(s)||_{\infty} = \sqrt{\gamma}\]
+%
+%\vi
+%
+%\redbu O Teorema~1 assegura 
+%que o sistema em malha fechada tem norma $H_{\infty}$ limitada superiormente por $\sqrt{\gamma}$.
+%
+%
+%\vii
+%
+%\begin{lema}[Zhou et al.,1996]\label{lem}
+%Seja $H_{wy}$ a fun��o de transfer�ncia de $W(s)$ para $Y(s)$ em \eqref{eq:SisMF} e considere \eqref{eq:W(s)}. 
+%Se 
+%\begin{equation}
+%\label{eq:Zhou}
+%||H_{wy}(s)||_{\infty} ||\Delta(s)||_{\infty} \leq 1
+%\end{equation}
+%ent�o, o sistema \eqref{eq:SisMF} � est�vel.
+%\end{lema}
+%
+%\vi
+%
+%\redbu De acordo com Lema~\ref{lem} a factibilidade do Teorema~1 assegura a
+%estabilidade do sistema em malha fechada.
+%	
+%\end{frame}
+
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplo num�rico}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{figs/Figure_01_Comparison.eps}
+\caption{Compara��o da resposta dos diferentes PIDs a uma entrada degrau para $\delta=0.03$.}
+\label{fig:Resp_delta0.03}
+\end{figure}
+
+\vspace{-7mm}
+
+Acr�nimos:
+\alert{ZN}: Ziegler Nichols; 
+\alert{P11a}:~(Parada et al, 2011) (com $\delta= 0.03$); 
+\alert{F14a}:~(Felini et al, 2014) (com $\delta=0.03$, $\mu=0.01$ e $\alpha=0.001$);
+ \alert{Teo 1a}: Teorema 1 (com $\delta=0.03$); 
+
+
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplo num�rico}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{figs/Figure_02_Comparison.eps}
+\caption{Compara��o da resposta dos diferentes PIDs a uma entrada degrau para $\delta=0.04$.}
+\label{fig:Resp_delta0.04}
+\end{figure}
+
+\vspace{-7mm}
+
+Acr�nimos:
+\alert{ZN}: Ziegler Nichols; 
+ \alert{P11b}:~(Parada et al, 2011) (com $\delta=0.04$); 
+ \alert{F14b}:~(Felini et al, 2014) (com $\delta=0.04$, $\mu=0.01$ e $\alpha=0.001$); e
+  \alert{Teo 1b}: Teorema 1(com $\delta=0.04$).
+
+\end{frame}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Exemplo num�rico}
+
+\begin{table}[H]
+\centering
+%\caption{Crit�rios de desempenho.}
+\label{tab:Desempenho}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+M�todo     & ITAE  & IAE  & OS[\%] & Tr[s] & Ts[s]\\ \hline
+ZN         & 513.6 & 19.9 & 86.3   & 19.7  & 58.8 \\ \hline
+P11a       & 455.4 & 18.2 & 63.5   & 19.7  & 58.8 \\ \hline
+F14a       & 800.7 & 24.9 & 83.6   & 19.7  & 78.4 \\ \hline
+Teo 1a & 580.0 & 20.4 & 57.1   & 20.4  & 69.4 \\ \hline
+P11b       & 396.7 & 17.5 & 83.2   & 19.8  & 47.8 \\ \hline
+F14b       & 750.7 & 24.2 & 86.7   & 19.8  & 73.1 \\ \hline
+Teo 1b & 529.3 & 19.8 & 70.0   & 19.8  & 60.8 \\ \hline
+\end{tabular}
+\caption{Crit�rios de desempenho obtido pela resposta ao degrau.}
+\end{table}
+
+\begin{exampleblock}{An�lise do resultados}
+\begin{itemize}
+\item Diminui��o do sobrepasso percentual (OS[$\%$])
+\item Considerando os �ndices de erro ITAE e IAE, seu desempenho foi melhor 
+que~Felini et al. (2014) e pior que Parada et al. (2011).
+\end{itemize}
+\end{exampleblock}
+
+
+%Acr�nimos:
+%\alert{ZN}: Ziegler Nichols; 
+%\alert{P11a}:~(Parada et al, 2011) (com $\delta= 0.03$); 
+%\alert{F14a}:~(Felini et al, 2014) (com $\delta=0.03$, $\mu=0.01$ e $\alpha=0.001$);
+% \alert{Teo 1a}: Teorema 1 (com $\delta=0.03$); 
+% \alert{P11b}:~(Parada et al, 2011) (com $\delta=0.04$); 
+% \alert{F14b}:~(Felini et al, 2014) (com $\delta=0.04$, $\mu=0.01$ e $\alpha=0.001$); e
+%  \alert{Teo 1b}: Teorema 1(com $\delta=0.04$).
+
+\end{frame}
+
+%==================================================================================
+\section{Conclus�o}
+\subsection*{Conc}
+
+%---------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Conclus�o}
+
+\begin{block}{Conclus�o}
+Este trabalho apresenta uma condi��o de projeto de PIDs
+com aloca��o de polos (D-estabilidade) a um sistema de 2\textordfeminine~ordem
+com atraso no tempo e incertezas.
+Compara��es num�ricas foram realizadas e observou-se melhoras em 
+alguns indicadores de desempenho.
+\end{block}
+
+\vi
+
+	\begin{minipage}{0.3\linewidth}
+		\epsfxsize=\columnwidth
+		\centerline{\epsffile{./figs/CAPES.eps}}
+	\end{minipage} \quad
+	\begin{minipage}{0.3\linewidth}
+		\epsfxsize=\columnwidth
+		\centerline{\epsffile{./figs/CNPq.eps}}
+	\end{minipage} \quad
+	\begin{minipage}{0.3\linewidth}
+		\epsfxsize=\columnwidth
+		\centerline{\epsffile{./figs/fapdf.eps}}
+	\end{minipage}
+\end{frame}
+
+
+\end{document}

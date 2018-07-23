@@ -1,0 +1,10 @@
+x = -1.5:0.1:1.5;
+a1 = x;
+a2 = 5*x;
+f = tan(x);
+plot(x, a1, 'r', x, a2, 'm', x, f,'b');
+h = legend('a_1x(t)', 'a_2x(t)','f(x(t))');
+xlabel('x(t)');
+set(gca,'ytick',[]);
+set(gca,'xtick',[-1.42 1.42]);
+grid on;

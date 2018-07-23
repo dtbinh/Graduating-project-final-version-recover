@@ -1,0 +1,35 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+                      
+\chapter{Fundamentos Teóricos}\label{CapFundamentosTeoricos}
+
+% Resumo opcional. Comentar se não usar.
+%\resumodocapitulo{Resumo opcional.}
+
+\section{Introdução}
+
+
+
+\section{Controladores lógicos programáveis}
+
+	Os controladores lógicos programáveis (CLPs) são aparelhos que operam uma lógica computacional e controlam máquinas e processos industriais a partir de suas entradas e saídas digitais e analógicas \cite{article:nema:2005}. O CLP centraliza as informações de um processo ou parte dele, sendo capaz criar diferentes malhas de controle dentro de sua programação e realizar uma automação industrial completa. 
+		
+	De modo a entender como um CLP se encaixa em uma malha de controle de processo, cabe saber como é feita a leitura de uma entrada analógica e digital. Em ambas ocorre uma conversão analógico para digital (A/D). No caso da entrada digital, esta pode receber apenas dois níveis de tensão, um alto e outro baixo. A conversão do sinal é feita para um bit de memória do CLP. A Tabela~\ref{tab:clp_DIs} apresenta duas lógicas de uma porta digital de um CLP.
+	\begin{table}[ht]
+	\centering
+	\caption{Lógica da conversão A/D de uma porta digital}
+	\label{tab:clp_DIs}
+	\begin{tabular}{c|c|c|}
+	\cline{2-3}
+	\textbf{}                                       & \multicolumn{2}{c|}{Conversão para um BIT}       \\ \hline
+	\multicolumn{1}{|c|}{\textbf{Escala de tensão}} & \textbf{Lógica direta} & \textbf{Lógica reversa} \\ \hline
+	\multicolumn{1}{|c|}{ALTO (e.g. 24V)}           & 1                      & 0                       \\ \hline
+	\multicolumn{1}{|c|}{BAIXO (e.g. 0V)}           & 0                      & 1                       \\ \hline
+	\end{tabular}
+	\end{table}
+	
+Definindo
+\begin{equation} \label{eq:k}
+\phi \triangleq \dfrac{a}{1+b^2}
+\end{equation}
+
+Em \eqref{eq:k} mostra-se que

@@ -1,0 +1,39 @@
+                     
+\chapter{Introdução}\label{CapIntro}
+
+\section{Contextualização}
+
+O ponto de partida para o estudo e desenvolvimento de qualquer sistema de controle é a análide de estabilidade, pois este é o requisito minimo que o deseja obter quando se trata deste âmbito da engenharia. Antes mesmo de se iniciar o projeto do controlador para determinado sistema, a estabilidade é a primeira propriedade a ser verificada e o projeto do controlador é feito com base nos resultados obtidos desta análise.
+
+Sistemas não lineares têm como principal característica o fato de que não se consegue prever como este se comporta ao longo do tempo, para qual região do plano de estados é estável, dentre outros. Desta maneira, muitas são as linhas de pesquisa voltadas para o estudo de estabilidade de sistemas não lineares.
+
+Um método bastante explorado para estudo de sistema não lineares é a linearização deste em torno de um ponto de equilíbrio, esta abordagem garante apenas um comportamento aproximado para a região em torno do ponto de equilíbrio para o qual foi linearizado. Neste trabalho, porém, é utilizado o método de modelagem de sistemas utilizando lógica fuzzy \cite{article:zadeh:1990} segundo a abordagem proposta por (Takagi e Sugeno, 1985) \cite{articlets:1985} utilizando-se o artifício da não-llineridade por setor local \cite{booktw:2003}. Este método garante a obtenção de um modelo formado por conjuntos de funções lineares o qual é exato ao modelo não linear para para qualquer instante de tempo, desde que o ponto inicial esteja dentro do setor local para o qual o modelo fora obtido.
+
+Um outro desafio encontrado no estudo de sistemas não lineares é o fato de que, para sistemas de ordens maiores, a reposta do sistema se torna muito difícil de se obter e as análises até mesmo inviáeis. Como uma forma de amenizar este problema, Lyapunov propôs um teorema em que se permite analisar o comportamento de pontos de equilíbrio na origem de sistemas sem precisar resolvê-los. Assim, para se verificar se a origem é um ponto de equilíbrio estável, basta apenas definir uma função definida positiva tal que sua respectiva variação seja definida negativa. Este tipo de função é chamada função de Lyapunov e não há uma regra estabelicida de como esta função pode ser obtida, sabendo-se apenas que é dependente do próprio sistema. Um exemplo de função de Lyapunov é a função de energia de um sistema dinâmico em movimento.
+
+Por fim, mais um desafio encontrado na literatura é a obtenção de estimativa da região no espaço de estados para a qual o ponto de equilíbrio sempre atrairá as trajetórias das respostas que adentrarem aquela região, ou seja, a região de atração do ponto de equilíbrio estável. A função de Lyapunov, por aparecer na forma quadrática, tem a caracterítica de se permitir verificar estivativa da região de atração através desta, neste caso, esta região é conhecida como superfície de nível. Como dito antes, as funções de Lyapunov não têm uma forma padrão através das quais podem ser obtidas, o que torna um desafio também a estimativa da região de atração do ponto de equilíbrio na origem do sistema.
+
+\section{Definição do problema}
+
+Para este trabalho serão considerados sistemas não lineares
+\begin{equation}
+\dot{x} = f(x)
+\end{equation}
+em que $x$ é o vetor de estados.
+
+Neste contexto, o modelo fuzzy Takagi-Sugeno será obtido para os sistemas não lineares em estudo, a partir disto serão desenvolvidas técnica para a estimativa da estabilidade de pontos de equilíbrio e será investigada qual a melhor estimativa para a região de atração a partir do método de estabilidade de Lyapunov via LMIs.
+
+\section{Objetivos do projeto}
+
+O objetivo principal deste trabalho é estabelecer um método de determinação da análise de estabilidade e região de atração do ponto de equilíbrio situado na origem para de sistemas dinâmicos nã-lineares menos conservadores que os encontrados na literatura, utilizando-se para tanto a abordagem de estudo de estabilidade proposta por Lyapunov, além de Desigualdades Matriciais Lineares (LMIs) e modelagem fuzzy Takagi-Sugeno por não linearidade de setor.
+
+Os objetivos específicos deste trabalho consistem em
+\begin{enumerate}
+\item Obter o modelo fuzzy Takagi-Sugeno de sistemas não lineares por meio da não linearidade por setor;
+\item Propor novas condições de análise de estabilidade local por meio da teoria de estabilidade de Lyapunov, Lema de Finsler e do uso de LMIs;
+\item Propor um método que maximize a estimativa da região de atração do sistema não linear contida dentro da região de validade do modelo fuzzy Takagi-Sugeno.
+\end{enumerate}
+
+\section{Apresentação do manuscrito}
+
+Este manuscrito é dividido em quatro capítulos, além deste. O Capítulo \ref{cap_ModelagemSisNaoLinearesporFuzzyTS} apresenta o conceito de retrato de fase para análise qualitativa dos pontos de equilíbrio de sistema não lineares, em seguir é apresentada a modelagem fuzzy Takagi-Sugeno por meio da abordagem por não linearidade de setor e, por fim, são apresentados os exemplo trabalhados neste projeto. O Capítulo $3$ introduz o conceito de estabilidade de Lyapunov e do uso de LMIs. Neste capítulo também se encontra o resultado principal deste manuscrito, que é o método de análise de estabilidade aqui proposto. Em seguida são apresentados modelos de análise de estabilidade também utilizando dinâmica fuzzy T-S e o método de Lyapunov, de forma tal que pudessem ser comparados com o resultado principal do capítulo. O Capítulo $4$ possui a mesma dinâmica do Capítulo $3$, porém com o foco em se obter a melhor estimativa da região de atração do ponto de equilíbrio na origem. O último capítulo, Capítulo $5$ consiste na conclusão do trabalho, no qual todos os resultados obtidos são descritos de forma sucinta e são propostos passos futuros para a continuação deste trabalho.

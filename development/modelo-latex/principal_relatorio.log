@@ -1,0 +1,866 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.12.10)  19 DEC 2017 22:19
+entering extended mode
+**./principal_relatorio.tex
+(principal_relatorio.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk11.clo"
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2017/05/19 3.10 The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-portuges\portuges.ldf"
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2017/05/19 3.10 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\xebabel.def"))
+Package babel Info: Making " an active character on input line 145.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\xetex.def"
+File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
+JK)
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen108
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen109
+\subfiglabelskip=\skip46
+\c@subfigure=\count89
+\c@lofdepth=\count90
+\c@subtable=\count91
+\c@lotdepth=\count92
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen110
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen111
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks17
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks18
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ntheorem\ntheorem.sty"
+Style `ntheorem', Version 1.33 <2011/08/15>
+Package: ntheorem 2011/08/15 1.33
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\theorem@style=\toks21
+\theorem@@style=\toks22
+\theorembodyfont=\toks23
+\theoremnumbering=\toks24
+\theorempreskipamount=\skip52
+\theorempostskipamount=\skip53
+\theoremframepreskipamount=\skip54
+\theoremframepostskipamount=\skip55
+\theoreminframepreskipamount=\skip56
+\theoreminframepostskipamount=\skip57
+\theorem@preskip=\toks25
+\theorem@postskip=\toks26
+\theorem@framepreskip=\toks27
+\theorem@framepostskip=\toks28
+\theorem@inframepreskip=\toks29
+\theorem@inframepostskip=\toks30
+\theoremindent=\dimen119
+\theorem@indent=\dimen120
+\theoremrightindent=\dimen121
+\theorem@rightindent=\dimen122
+\theoremheaderfont=\toks31
+\theoremseparator=\toks32
+\theoremprework=\toks33
+\theorempostwork=\toks34
+\theoremsymbol=\toks35
+\qedsymbol=\toks36
+\theoremkeyword=\toks37
+\qedsymbol=\toks38
+\thm@topsep=\skip58
+\thm@topsepadd=\skip59
+Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
+\c@endNonectr=\count105
+\c@currNonectr=\count106
+\mysavskip=\skip60
+Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input
+ line 1175.
+\thm@amstmpdepth=\dimen123
+\tagwidth=\dimen124
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\boxedminipage\boxedminipage.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count107
+\Gm@cntv=\count108
+\c@Gm@tempcnt=\count109
+\Gm@bindingoffset=\dimen125
+\Gm@wd@mp=\dimen126
+\Gm@odd@mp=\dimen127
+\Gm@even@mp=\dimen128
+\Gm@layoutwidth=\dimen129
+\Gm@layoutheight=\dimen130
+\Gm@layouthoffset=\dimen131
+\Gm@layoutvoffset=\dimen132
+\Gm@dimlist=\toks39
+
+("C:\Program Files\MiKTeX 2.9\tex\xelatex\xetexconfig\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\theorem.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancybox\fancybox.sty"
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box28
+\shadowsize=\dimen133
+\@Sbox=\box29
+\do@VerbBox=\toks40
+\the@fancyput=\toks41
+\this@fancyput=\toks42
+\EndVerbatimTokens=\toks43
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip61
+\f@nch@O@elh=\skip62
+\f@nch@O@erh=\skip63
+\f@nch@O@olh=\skip64
+\f@nch@O@orh=\skip65
+\f@nch@O@elf=\skip66
+\f@nch@O@erf=\skip67
+\f@nch@O@olf=\skip68
+\f@nch@O@orf=\skip69
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty"
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks44
+\AP@partial=\box30
+\AP@footins=\box31
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 147.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen134
+\extrarowheight=\dimen135
+\NC@list=\toks45
+\extratabsurround=\skip70
+\backup@length=\skip71
+)
+\everycr=\toks46
+\minrowclearance=\skip72
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count110
+\rotFPtop=\skip73
+\rotFPbot=\skip74
+\rot@float@box=\box32
+\rot@mess@toks=\toks47
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+
+Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
+orted.
+
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+Package: mathtools 2017/10/30 v1.20 mathematical typesetting tools
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count111
+\calc@Bcount=\count112
+\calc@Adimen=\dimen136
+\calc@Bdimen=\dimen137
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count113
+\calc@Cskip=\skip77
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count114
+\l_MT_multwidth_dim=\dimen138
+\origjot=\skip78
+\l_MT_shortvdotswithinadjustabove_dim=\dimen139
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen140
+\l_MT_above_intertext_sep=\dimen141
+\l_MT_below_intertext_sep=\dimen142
+\l_MT_above_shortintertext_sep=\dimen143
+\l_MT_below_shortintertext_sep=\dimen144
+)
+\c@currexamplectr=\count115
+\c@endexamplectr=\count116
+\c@example=\count117
+\c@currdefnctr=\count118
+\c@enddefnctr=\count119
+\c@defn=\count120
+\c@currtheoremctr=\count121
+\c@endtheoremctr=\count122
+\c@theorem=\count123
+\c@currobservationctr=\count124
+\c@endobservationctr=\count125
+\c@observation=\count126
+\c@currlemmactr=\count127
+\c@endlemmactr=\count128
+\c@lemma=\count129
+\c@currproofctr=\count130
+\c@endproofctr=\count131
+\c@proof=\count132
+ (ft2unb.sty
+Package: ft2unb 2006/03/19 v1.0
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)))
+\@indexfile=\write4
+\openout4 = `principal_relatorio.idx'.
+
+
+Writing index file principal_relatorio.idx
+(principal_relatorio.aux (ficha_catalografica.aux) (resumos.aux) (simbolos.aux)
+(cap_Introducao.aux) (cap_ModelagemSisNaoLinearesporFuzzyTS.aux
+
+LaTeX Warning: Label `fig:setor_local_ex_sal09' multiply defined.
+
+) (cap_EstabilidadeSisNaoLineares.aux
+
+LaTeX Warning: Label `lambda_r' multiply defined.
+
+
+LaTeX Warning: Label `eq:theorem6_LMI2' multiply defined.
+
+
+LaTeX Warning: Label `eq:diff_alpha' multiply defined.
+
+) (cap_RegiaoDeAtracao.aux) (cap_Conclusoes.aux))
+\openout1 = `principal_relatorio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(66.57935pt, 464.34918pt, 66.57935pt)
+* v-part:(T,H,B)=(56.9055pt, 686.7347pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=464.34918pt
+* \textheight=686.7347pt
+* \oddsidemargin=-5.69046pt
+* \evensidemargin=-5.69046pt
+* \topmargin=-41.81825pt
+* \headheight=12.0pt
+* \headsep=14.45377pt
+* \topskip=11.0pt
+* \footskip=50.58878pt
+* \marginparwidth=53.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box33
+LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+File: figs/capa_fundo.pdf Graphic file (type QTm)
+
+<use  "figs/capa_fundo.pdf" > [1
+
+
+] [1
+
+]
+\openout2 = `ficha_catalografica.aux'.
+
+ (ficha_catalografica.tex
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--30
+[] 
+ []
+
+) [1
+
+] [1
+
+
+
+] [1
+
+]
+\openout2 = `resumos.aux'.
+
+ (resumos.tex) [1
+
+] (principal_relatorio.toc
+
+LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
+(Font)              using `T1/lmr/bx/n' instead on input line 2.
+
+[2
+
+
+]
+Overfull \hbox (2.6936pt too wide) in paragraph at lines 40--40
+ [][] []\T1/lmr/m/sc/10.95 Segunda abor-da-gem para ob-ten-ção da es-ti-ma-tiva
+ da re-gião de atra- 
+ []
+
+)
+\tf@toc=\write5
+\openout5 = `principal_relatorio.toc'.
+
+ [3] (principal_relatorio.lof
+Overfull \hbox (34.3135pt too wide) in paragraph at lines 12--12
+ [][] []\T1/lmr/m/n/10.95 Trajetória da res-posta do sis-tema droop para o pont
+o ini-cial $\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 = [10000 1000 0\OML/cmm/
+m/it/10.95 :\OT1/cmr/m/n/10.95 01][]$\T1/lmr/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (40.01392pt too wide) in paragraph at lines 14--14
+ [][] []\T1/lmr/m/n/10.95 Trajetória da res-posta do sis-tema droop para o pont
+o ini-cial $\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 = [\OMS/cmsy/m/n/10.95 ^
+^@\OT1/cmr/m/n/10.95 6252 1000 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 01][]$\
+T1/lmr/m/n/10.95 . 
+ []
+
+[4
+
+] [5])
+\tf@lof=\write6
+\openout6 = `principal_relatorio.lof'.
+
+ [6]
+\openout2 = `simbolos.aux'.
+
+ (simbolos.tex
+Missing character: There is no � in font ec-lmbx12!
+Missing character: There is no � in font ec-lmbx12!
+Missing character: There is no � in font ec-lmr10!
+Missing character: There is no � in font ec-lmr10!
+Missing character: There is no � in font ec-lmr10!
+Missing character: There is no � in font ec-lmr10!
+Missing character: There is no � in font ec-lmr10!
+Missing character: There is no � in font ec-lmr10!
+) [7
+
+
+]
+\openout2 = `cap_Introducao.aux'.
+
+ (cap_Introducao.tex
+Cap\'{\i }tulo 1.
+[1
+
+
+
+
+]) [2] [3]
+\openout2 = `cap_ModelagemSisNaoLinearesporFuzzyTS.aux'.
+
+ (cap_ModelagemSisNaoLinearesporFuzzyTS.tex
+Cap\'{\i }tulo 2.
+[4
+
+
+
+]
+Overfull \hbox (0.22493pt too wide) in paragraph at lines 26--27
+[]\T1/lmr/m/it/10.95 Considere
+ []
+
+[5] [6]
+File: ./figs/phase_portrait_stable.pdf Graphic file (type QTm)
+ <use  "./figs/phase_portrait_stable.pdf" >
+File: ./figs/phase_portrait_unstable.pdf Graphic file (type QTm)
+
+<use  "./figs/phase_portrait_unstable.pdf" >
+File: ./figs/phase_portrait_assimptotically_stable.pdf Graphic file (type QTm)
+
+<use  "./figs/phase_portrait_assimptotically_stable.pdf" >
+File: ./figs/phase_portrait_saddle.pdf Graphic file (type QTm)
+
+<use  "./figs/phase_portrait_saddle.pdf" > [7]
+Overfull \hbox (0.36617pt too wide) in paragraph at lines 116--117
+[]\T1/lmr/m/it/10.95 Considere o sis-tema não li-near
+ []
+
+[8]
+File: ./figs/phase_portrait_ex2_LPJ12.pdf Graphic file (type QTm)
+ <use  "./figs/phase_portrait_ex2_LPJ12.pdf" >
+File: ./figs/barramento.pdf Graphic file (type QTm)
+
+<use  "./figs/barramento.pdf" > [9] [10]
+File: ./figs/droop_answer_to_arbitrary_initial_value.pdf Graphic file (type QTm
+)
+
+<use  "./figs/droop_answer_to_arbitrary_initial_value.pdf" >
+Underfull \hbox (badness 1910) in paragraph at lines 245--245
+[]\T1/lmr/m/n/10.95 Figura 2.5: Tra-je-tó-ria da res-posta do sis-tema droop pa
+ra o ponto ini-cial $\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 =
+ []
+
+[11]
+File: ./figs/droop_answers_trajectories.pdf Graphic file (type QTm)
+ <use  "./figs/droop_answers_trajectories.pdf" > [12]
+Overfull \hbox (29.71329pt too wide) in paragraph at lines 278--279
+\T1/lmr/m/n/10.95 dos. As-su-mindo o ponto ini-cial $[][] \OT1/cmr/m/n/10.95 = 
+[][] = [][]$\T1/lmr/m/n/10.95 ,
+ []
+
+File: ./figs/droop_answer_to_arbitrary_initial_value_var_desv.pdf Graphic file 
+(type QTm)
+<use  "./figs/droop_answer_to_arbitrary_initial_value_var_desv.pdf" >
+Underfull \hbox (badness 1708) in paragraph at lines 283--283
+[]\T1/lmr/m/n/10.95 Figura 2.7: Tra-je-tó-ria da res-posta do sis-tema droop pa
+ra o ponto ini-cial $\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 =
+ []
+
+File: ./figs/4tanks.pdf Graphic file (type QTm)
+<use  "./figs/4tanks.pdf" > [13] [14] [15] [16] [17]
+File: ./figs/global_sector_nonlinearity.pdf Graphic file (type QTm)
+
+<use  "./figs/global_sector_nonlinearity.pdf" >
+File: ./figs/local_sector.pdf Graphic file (type QTm)
+
+<use  "./figs/local_sector.pdf" > [18] [19]
+File: ./figs/polyhedral_set_example.pdf Graphic file (type QTm)
+
+<use  "./figs/polyhedral_set_example.pdf" >
+
+LaTeX Warning: Reference `eq:nonlinear_system_without_u' on page 20 undefined o
+n input line 422.
+
+[20]
+File: ./figs/local_sector_ex_sal09.pdf Graphic file (type QTm)
+ <use  "./figs/local_sector_ex_sal09.pdf" > [21]
+File: ./figs/membershio_degrees_ex_sal09.pdf Graphic file (type QTm)
+
+<use  "./figs/membershio_degrees_ex_sal09.pdf" > [22] [23]
+File: ./figs/fuzzy_TS_sim_ex2_LPJ12.pdf Graphic file (type QTm)
+
+<use  "./figs/fuzzy_TS_sim_ex2_LPJ12.pdf" > [24] [25] [26]
+File: ./figs/fuzzy_TS_sim_droop_UFSM.pdf Graphic file (type QTm)
+
+<use  "./figs/fuzzy_TS_sim_droop_UFSM.pdf" >
+File: ./figs/fuzzy_TS_sim_droop_UFSM_out_of_C.pdf Graphic file (type QTm)
+
+<use  "./figs/fuzzy_TS_sim_droop_UFSM_out_of_C.pdf" >
+File: ./figs/P_f_out_of_C.pdf Graphic file (type QTm)
+
+<use  "./figs/P_f_out_of_C.pdf" >
+File: ./figs/Q_f_out_of_C.pdf Graphic file (type QTm)
+ <use  "./figs/Q_f_out_of_C.pdf" >
+File: ./figs/delta_out_of_C.pdf Graphic file (type QTm)
+
+<use  "./figs/delta_out_of_C.pdf" > [27] [28] [29]
+File: ./figs/4_tanks_simulation.pdf Graphic file (type QTm)
+
+<use  "./figs/4_tanks_simulation.pdf" > [30]) [31]
+\openout2 = `cap_EstabilidadeSisNaoLineares.aux'.
+
+
+(cap_EstabilidadeSisNaoLineares.tex
+Cap\'{\i }tulo 3.
+[32
+
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 27.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 27.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 27.
+File: ./figs/epsilon_delta.pdf Graphic file (type QTm)
+
+<use  "./figs/epsilon_delta.pdf" >
+File: ./figs/pendulum.pdf Graphic file (type QTm)
+ <use  "./figs/pendulum.pdf" > [33] [34]
+File: ./figs/pendulum_phase_portrait.pdf Graphic file (type QTm)
+
+<use  "./figs/pendulum_phase_portrait.pdf" >
+File: ./figs/pendulum_phase_portrait_k_0.pdf Graphic file (type QTm)
+
+<use  "./figs/pendulum_phase_portrait_k_0.pdf" > [35] [36]
+File: ./figs/convex_set_example.pdf Graphic file (type QTm)
+
+<use  "./figs/convex_set_example.pdf" >
+File: ./figs/nonconvex_set_example.pdf Graphic file (type QTm)
+
+<use  "./figs/nonconvex_set_example.pdf" > [37] [38] [39] [40] [41] [42]
+[43] [44] [45]
+File: ./figs/phik_hk_ex_LPJ12.pdf Graphic file (type QTm)
+ <use  "./figs/phik_hk_ex_LPJ12.pdf" > [46] [47]
+File: ./figs/phi_vs_lambda_max.pdf Graphic file (type QTm)
+
+<use  "./figs/phi_vs_lambda_max.pdf" > [48] [49] [50] [51] [52]
+Overfull \hbox (0.89035pt too wide) in paragraph at lines 683--683
+[] 
+ []
+
+
+Overfull \hbox (28.40456pt too wide) detected at line 688
+\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^M\OT1/cmr/m/n/10
+.95 ) = \OML/cmm/m/it/10.95 ^^M[] [] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^
+^M[] [] \OT1/cmr/m/n/10.95 + [] + \OML/cmm/m/it/10.95 ^^M[] []
+ []
+
+[53]) [54]
+\openout2 = `cap_RegiaoDeAtracao.aux'.
+
+ (cap_RegiaoDeAtracao.tex
+Cap\'{\i }tulo 4.
+File: ./figs/reg_atrac_pend.pdf Graphic file (type QTm)
+<use  "./figs/reg_atrac_pend.pdf" > [55
+
+
+
+] [56] [57]
+Overfull \hbox (0.96967pt too wide) in paragraph at lines 111--112
+[]\T1/lmr/m/it/10.95 (Boyd, 1994) [[]] Su-
+ []
+
+[58]
+Overfull \hbox (16.35223pt too wide) in paragraph at lines 136--137
+[]\T1/lmr/m/it/10.95 Se exis-tem ma-tri-zes $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 ^^K\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 P\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^K\OT1/cmr/m/n/10.95 )[] \OML/cmm/m/it/10.9
+5 >
+ []
+
+[59] [60]
+File: ./figs/reg_estab_Met4.pdf Graphic file (type QTm)
+ <use  "./figs/reg_estab_Met4.pdf" >
+File: ./figs/contour_V_dot.pdf Graphic file (type QTm)
+
+<use  "./figs/contour_V_dot.pdf" > [61]
+File: ./figs/reg_atrac_method4.pdf Graphic file (type QTm)
+ <use  "./figs/reg_atrac_method4.pdf" >
+[62]
+File: ./figs/reg_atrac_Met1.pdf Graphic file (type QTm)
+ <use  "./figs/reg_atrac_Met1.pdf" > [63]
+File: ./figs/reg_atrac_Met2.pdf Graphic file (type QTm)
+
+<use  "./figs/reg_atrac_Met2.pdf" > [64]
+File: ./figs/reg_atrac_Met5.pdf Graphic file (type QTm)
+ <use  "./figs/reg_atrac_Met5.pdf" >
+[65]
+File: ./figs/reg_atrac_Met3.pdf Graphic file (type QTm)
+ <use  "./figs/reg_atrac_Met3.pdf" >
+File: ./figs/domain_of_attraction_all_methods.pdf Graphic file (type QTm)
+
+<use  "./figs/domain_of_attraction_all_methods.pdf" > [66] [67] [68]) [69]
+\openout2 = `cap_Conclusoes.aux'.
+
+
+(cap_Conclusoes.tex
+Cap\'{\i }tulo 5.
+[70
+
+
+
+]) [71] (principal_relatorio.bbl
+Missing character: There is no – in font ec-lmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+[]\T1/lmr/m/n/10.95 KAEHLER, S. D. \T1/lmr/m/it/10.95 FUZZY LO-GIC - AN IN-TRO-
+DUC-TION\T1/lmr/m/n/10.95 .
+ []
+
+Missing character: There is no – in font ec-lmr10!
+[72
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 91.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [73]
+\c@noAnexo=\count133
+\tf@thm=\write7
+\openout7 = `principal_relatorio.thm'.
+
+ [74
+
+]
+(principal_relatorio.aux (ficha_catalografica.aux) (resumos.aux) (simbolos.aux)
+(cap_Introducao.aux) (cap_ModelagemSisNaoLinearesporFuzzyTS.aux)
+(cap_EstabilidadeSisNaoLineares.aux) (cap_RegiaoDeAtracao.aux)
+(cap_Conclusoes.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(\end occurred when \ifx on line 161 was incomplete) 
+Here is how much of TeX's memory you used:
+ 5951 strings out of 427834
+ 81002 string characters out of 3152469
+ 173396 words of memory out of 3000000
+ 9638 multiletter control sequences out of 15000+200000
+ 113671 words of font info for 90 fonts, out of 3000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 42i,21n,43p,1635b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on principal_relatorio.pdf (86 pages).

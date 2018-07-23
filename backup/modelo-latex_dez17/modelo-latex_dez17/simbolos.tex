@@ -1,0 +1,108 @@
+%TCIDATA{LaTeXparent=0,0,these.tex}
+                      
+
+\chapter*{\setfontarial\mdseries LISTA DE SÍMBOLOS} % se usar ft1unb.sty, descomente esta linha
+%\chapter*{LISTA DE SÍMBOLOS} % se usar ft2unb.sty, descomente esta linha
+
+\subsection*{Símbolos Latinos}
+
+\begin{tabular}{p{0.1\textwidth}p{0.63\textwidth}>{\PreserveBacklash\raggedleft}p{0.15\textwidth}}
+$A$	& Área 	& [m$^2$]\\
+$a$ & Percentual de abertura de válvula & [\%] \\
+$B_{k}$ & Bomba de número $k$ & \\
+$b$ & Percentual de funcionamento da bomba (comando da bomba) & [\%]\\
+%$Cp$ & Calor especifico a pressão constante	&  [kJ/kg.K]\\
+%$h$	& Entalpia especifica	& [kJ/kg]\\
+%$\dot{m}$	& Vazão mássica	& [kg/s]\\
+$E$ ou $e$ & Erro entre o valor da variável controlada e a referência & \\
+$G$ & Função de transferência & \\
+$G_f$ & Função de transferência de um filtro& \\
+$G_{pmn}$ & Função de transferência entre a saída $n$ e entrada $m$ de um processo & \\
+$H_i$ & Nível da coluna de líquido do tanque $i$ & [\%]\\
+$K$	& Ganho proporcional entre duas grandezas &\\
+$K_p$ & Ganho proporcional do controlador PID & \\
+$K_{TVi,j}$ & Ganho proporcional do transmissor de vazão $i$ para a vazão medida quando a bomba operava no ponto $j$ - calibração dos transmissores de vazão & [L/(s$\cdot$UD)]  \\
+$K_{TVi}$	& Ganho proporcional médio do transmissor de vazão $i$ - calibração dos transmissores de vazão & [L/(s$\cdot$UD)] \\
+$M\_sensor_{i,j}$ & Média dos dados fornecidos pelo transmissor de vazão $i$ quando a bomba operava fixa no ponto $j$ - calibração dos transmissores de vazão & [UD] \\
+$offset_i$ 	&  Média dos dados fornecidos pelo transmissor de vazão $i$ quando não havia vazão por ele (bomba em 0\%) - calibração dos transmissores de vazão& [UD]  \\
+$Q$	& Vazão volumétrica & [L/s] \\
+$Q_{i,j}$ & Fluxo através da válvula $i$ com a bomba operando no ponto $j$ & [L/s]\\
+%$T_{mistura}$ & Temperatura do tanque de mistura dado como exemplo & [\textsuperscript{o}C] \\
+$T_{B}$	& Tempo de duração de cada ponto de operação da bomba -experimento de obtenção das curvas características dos atuadores & [s] \\
+$T_D$ & Tempo de diferenciação do controlador PID & [s]\\
+$T_i$ & Tempo de integração do controlador PID & [s]\\
+$T_{V}$	& Tempo de duração de cada abertura da válvula - experimento de obtenção das curvas características dos atuadores & [s]\\ 
+$\Delta t_{i,j}$	& Intervalo de tempo gasto para encher o tanque $i$ quando a bomba operava no ponto $j$ - calibração dos transmissores de vazão  & [s]\\
+$U$ ou $u$ & Entrada em um sistema (e.g. saída de um controlador) & \\
+$U_m$ ou $u_m$  & Entrada número $m$ de um processo & \\
+$Vtq_i$		& Volume do tanque $i$ (entre nível 0\% e 100\%) & [L] \\
+$Y$ ou $y$	& Saída de um sistema & \\ 
+$Y_n$ ou $y_n$ & Saída número $n$ de um processo & \\
+
+\end{tabular}
+
+\subsection*{Símbolos Gregos}
+
+\begin{tabular}{p{0.1\textwidth}p{0.63\textwidth}>{\PreserveBacklash\raggedleft}p{0.15\textwidth}}
+%$\alpha$	& Difusividade térmica & 	[m$^2$/s]\\
+$\Delta $	& Variação entre duas grandezas similares	& \\
+$\theta $	& Atraso & [s] \\
+$\lambda $ 	& Constante de tempo em malha fechada para sintonia de controlador via modelo interno - IMC & [s] \\
+$\tau $		& Constante de tempo de uma função de transferência & [s] \\
+
+%$\rho$	& Densidade	& [m$^3$/kg] \\
+\end{tabular}
+
+%\subsection*{Grupos Adimensionais}
+
+%\begin{tabular}{p{0.1\textwidth}p{0.80\textwidth}}
+%$Nu$ &	Número de Nusselt \\
+%$Re$ &	Número de Reynolds 
+%\end{tabular}
+
+\subsection*{Subscritos}
+
+\begin{tabular}{p{0.1\textwidth}p{0.80\textwidth}}
+$B$	& Indica que é relativo a uma bomba \\
+$f$	& Indica funções e constantes de filtros de sinais \\
+$i$	& Índice para número de tanque, válvula e transmissor de vazão - $i\in\mathbf{N}|1\leq i\leq 4$ \\
+%$in$ & Indica variável de entrada \\
+$j$	& Índice dos pontos de operação de bomba para calibração dos transmissores de vazão, %Definição na página \pageref{simbolo:j}
+$j\in\mathbf{N}|1\leq j\leq 5$ \\
+$k$	& Índice para número de bomba (vide definição na página~\pageref{eq:k})\\
+$MF$	& Malha fechada \\
+$modelo$	& Indica dados inseridos ou obtidos de um modelo de um sistema real \\
+$n_a$	& Índice dos valores de abertura da válvula para experimento de obtenção de curva característica dos atuadores \\
+%$n_b$	& Índice dos valores de comando da bomba para experimento de obtenção de curva característica dos atuadores \\
+$o$		& Indica valor inicial \\
+%$out$	& Indica variável de saída \\
+$real$	& Indica dados inseridos ou obtidos de um sistema real \\
+$TV$	& Transmissor de vazão \\
+$V$		& Válvula \\
+\end{tabular}
+
+%\subsection*{Sobrescritos}
+%
+%\begin{tabular}{p{0.1\textwidth}p{0.80\textwidth}}
+%$\cdot$	& Variação temporal \\
+%$-$	& Valor médio
+%\end{tabular}
+
+\subsection*{Siglas}
+
+\begin{tabular}{p{0.1\textwidth}p{0.80\textwidth}}
+A/D		& Analógico para digital \\
+CHR		& CHIEN, HRONES e RESWICK - Sintonia de controlador \\
+CLP		& Controlador Lógico Programável \\
+D/A		& Digital para analógico \\
+IMC		& Controle por Modelo Interno (\textit{Internal Model Control}) - Sintonia de controlador \\
+MIMO	& Múltiplas entradas e múltiplas saídas \\
+OPC		& \textit{Open Platform Communications}, protocolo de comunicação de CLPs \\
+P		& Controlador Proporcional \\
+PI		& Controlador Proporcional Integral \\
+PID		& Controlador Proporcional Integral Derivativo \\
+SISO	& Uma entrada e uma saída \\
+SP		& \textit{Set Point} (Referência de variável controlada) \\
+UD		& Unidade Digital. É a unidade convencionada para os dados dos sensores após conversão A/D pelo controlador e antes da conversão D/A. \\
+\end{tabular}
+

@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------------------------------
+Como compilar modelo-latex_TG:
+
+1 - Abra o arquivo "principal_relatorio.tex" no editor Tex de preferência (no windows recomendo TeXstudio)
+2 - Compile (No TeXstudio: Tools -> Build & View)
+	Faça a compilação: Latex
+	Para fazer a compilação PdfLatex descomentar a opção %\usepackage{epstopdf} em principal_relatorio.tex
+3 - Verifique o arquivo .ps ou .pdf criado
+
+Como editar: 
+
+1 - Abra os aquivos .tex no editor Tex de preferência (no windows recomendo TeXstudio) e edite os textos 
+2 - As figuras são salvas no formato .eps no diretório /figs (software simples para conversão: jpeg2ps)
+3 - Compile e visualize frequentemente para ir verificando e tratando os erros
+
+Prof. Eduardo Stockler Tognetti
+Dep. de Eng. Elétrica - FT - UnB
+-------------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------------
+
+O modelo Latex serve tanto para relatório de trabalho de graduação, como para dissertação de mestrado e tese de doutorado. Ele segue normas estabelecidas e bibliografia no formato ANBT. O modelo está bem documentado com comentários no arquivo principal, que chama-se "relatorio.tex". Também está incluído um arquivo projeto TexNicCenter "relatorio.tcp". 
+O projeto está dividido em vários arquivos secundários que começam em "cap_", para capítulos, 
+e "anexo_", para os anexos. Esses arquivos secundários podem ser também editados em alto nível com 
+o software TeXstudio. Não abrir "principal_relatorio.tex" no TeXstudio, sob pena 
+de alteração da formatação. 
+
+Nesta versão, o autor pode escolher entre dois estilos:
+ft1unb.sty : usa fonte Times
+ft2unb.sty : usa fonte padrão do Latex
+A escolha do modelo é feita logo no preâmbulo do arquivo principal_relatorio.tex. 
+
+Para ter uma idéia da aparência do modelo, veja os arquivos "relatorio_ft1unb.pdf" e "relatorio_ft2unb.pdf" no Acrobat Reader.
+
+-------------------------------------------------------------------------------------------------------

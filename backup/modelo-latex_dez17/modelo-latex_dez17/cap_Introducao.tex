@@ -1,0 +1,69 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+                      
+\chapter{Introdução}\label{CapIntro}
+
+% Resumo opcional. Comentar se não usar.
+%\resumodocapitulo{Este capítulo apresenta a principal motivação do trabalho de graduação. Os objetivos são claramente apresentados, visando assim satisfazer um conjunto de características prescritas para este trabalho. Por fim, o manuscrito é apresentado. (Este resumo é opcional)}
+
+\section{Contextualização}
+
+\subsection{Motivação}
+
+A Figura~\ref{f:esquema_controle_processo} esquematiza a inserção de um controlador em um processo, no qual ocorrem perturbações.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{figs/esquema_controle_processo.png}
+	\caption{Modelo controlador + processo}
+	\label{f:esquema_controle_processo}
+\end{figure}
+
+
+Há diferentes abordagens para realizar o controle de processos.  A Tabela~\ref{tab:tipo_controladores}, tirada de UNBEHAUEN [1994 apud COELHO 2000, pg. 3]\nocite{thesis:coelho:2000} compara tipos diferentes de controladores que têm suas aplicações na indústria.
+
+\begin{table}[h]
+\centering
+\caption{Tipos de controladores para aplicação industrial}
+\label{tab:tipo_controladores}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Projeto}          & \textbf{Tipo de controle}                                                                                        \\ \hline
+Convencional              & PID, cascata e \textit{feedforward}                                                           \\ \hline
+Avançado: clássico        & \begin{tabular}[c]{@{}c@{}}Ganho escalonado, compensação do atraso de transporte,\\  desacoplamento\end{tabular} \\ \hline
+Avançado: com aplicações  & Preditivo, modelo interno, adaptativo                                                                            \\ \hline
+Avançado: pouca aplicação & Não linear, ótimo, robusto, inteligente                                                                          \\ \hline
+\end{tabular}
+\end{table}
+
+Os tipos de controle mais comuns na indústria são os que utilizam somente a abordagem de realimentação (\textit{Feedback}), tal como o PID (Proporcional, Integral, Derivativo). A grande vantagem do controle \textit{Feedback} é o fato de ele ser uma técnica de simples implementação que necessita o mínimo conhecimento do processo \cite[pg. 7]{book:smith:1997}.
+%SMITH (1997, pg. 7)
+
+O sistema de quatro tanques proposto por Johansson [2000]\nocite{article:johansson:2000}, 
+A Figura~\ref{f:4tqs_original} apresenta o esquemático da primeira planta de quatro tanques que foi proposta para ser uma plataforma de aprendizado e pesquisa no meio acadêmico.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.55]{figs/4tqs_original.jpg}
+	\caption{Planta de quatro tanques originalmente proposta por Johansson [2000]}
+	\label{f:4tqs_original}
+\end{figure}
+
+
+
+\section{Definição do problema}
+
+A planta 
+
+\section{Objetivos do projeto}
+
+O objetivo geral deste projeto é 
+Este projeto tem como objetivos específicos
+\begin{itemize}
+	\item xxx
+	\item yyy
+\end{itemize}
+
+
+\section{Apresentação do manuscrito}
+
+Uma breve introdução teórica é feita no capítulo~\ref{CapFundamentosTeoricos}. O capítulo \ref{CapDesenvolvimento} descreve a metodologia empregada no desenvolvimento do projeto.  Resultados experimentais são discutidos no capítulo \ref{CapExperimentos}, seguido das conclusões no capítulo \ref{CapConclusoes}. Os anexos contêm material complementar, tais como diagramas utilizados para simulação no Simulink\textsuperscript{TM} e os polinômios que caracterizam o ganho de vazão das bombas instaladas na planta.

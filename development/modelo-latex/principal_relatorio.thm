@@ -1,0 +1,27 @@
+\contentsline {example}{{Exemplo}{2.2.{1}}{Representações distintas de um mesmo sistema não linear}}{5}
+\contentsline {example}{{Exemplo}{2.2.{2}}{Sistema não linear de segunda ordem \cite {article:LPJ:2011}}}{8}
+\contentsline {example}{{Exemplo}{2.2.{3}}{Sistema \textit {Droop}}}{9}
+\contentsline {example}{{Exemplo}{2.2.{4}}{Processo de quatro tanques}}{13}
+\contentsline {example}{{Exemplo}{2.3.{1}}{}}{21}
+\contentsline {example}{{Exemplo}{2.3.{2}}{Sistema não linear de segunda ordem \cite {article:LPJ:2011}}}{24}
+\contentsline {example}{{Exemplo}{2.3.{3}}{Sitema droop}}{25}
+\contentsline {example}{{Exemplo}{2.3.{4}}{Processo de quatro tanques}}{27}
+\contentsline {defn}{{Definição}{1}{}}{33}
+\contentsline {example}{{Exemplo}{3.2.{1}}{Pêndulo simples}}{33}
+\contentsline {theorem}{{Teorema}{1}{Khalil, 2003 \cite {bookkhalil:2003}}}{38}
+\contentsline {example}{{Exemplo}{3.2.{2}}{}}{38}
+\contentsline {observation}{{Observação}{1}{}}{39}
+\contentsline {example}{{Exemplo}{3.2.{3}}{}}{40}
+\contentsline {theorem}{{Teorema}{2}{Boyd, 1994 \cite {bookboydl:1994}}}{41}
+\contentsline {theorem}{{Teorema}{3}{Mozelli, Palhares, Sousa e Mendes, 2009 \cite {MPSM:2009}}}{41}
+\contentsline {lemma}{{Lema}{1}{Lema de Finsler - versão reduzida}}{43}
+\contentsline {theorem}{{Teorema}{4}{Proposto}}{44}
+\contentsline {proof}{{Prova}{1}{Prova do Teorema \ref {th:main_result}}}{44}
+\contentsline {example}{{Exemplo}{3.4.{1}}{}}{45}
+\contentsline {example}{{Exemplo}{3.4.{2}}{Sistema {\it Droop}}}{51}
+\contentsline {observation}{{Observação}{2}{}}{57}
+\contentsline {theorem}{{Teorema}{5}{Estimativa para região de atração}}{57}
+\contentsline {proof}{{Prova}{2}{}}{58}
+\contentsline {lemma}{{Lema}{2}{Complemento de Schur para desigualdades não restritas}}{58}
+\contentsline {theorem}{{Teorema}{6}{Outra estimativa para a região de atração}}{59}
+\contentsline {proof}{{Prova}{3}{}}{59}

@@ -1,0 +1,8 @@
+COMPILAR 
+
+principal_relatorio.tex 
+
+usando pdflatex:
+
+
+pdflatex.exe --output-format pdf -synctex=1 -interaction=nonstopmode principal_relatorio.tex

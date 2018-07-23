@@ -1,0 +1,52 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.42.2.1 }
+
+\bibitem{thesis:coelho:2000}
+\abntrefinfo{COELHO}{COELHO}{2000}
+{COELHO, L. dos S.
+\emph{Identificação e Controle de Processos Multivariáveis Via Metodologias
+  Avançadas e Inteligência Computacional}.
+Tese (Doutorado) --- Universidade Federal de Santa Catarina, Fevereiro 2000.}
+
+\bibitem{book:smith:1997}
+\abntrefinfo{SMITH e CORRIPIO}{SMITH; CORRIPIO}{1997}
+{SMITH, C.~A.; CORRIPIO, A.~B. \emph{Principles and Practice of Automatic
+  Process Control}. Second edition. Hoboken, NJ: John Wiley \& Sons, Inc,
+  1997.}
+
+\bibitem{book:marlin:2014}
+\abntrefinfo{MARLIN}{MARLIN}{2014}
+{MARLIN, T.~E. \emph{Process Control: Designing Processes and Control Systems
+  for Dynamic Performance}. Second edition. New York, NY: McGraw-Hill, 2014.}
+
+\bibitem{article:johansson:2000}
+\abntrefinfo{JOHANSSON}{JOHANSSON}{2000}
+{JOHANSSON, K.~H. The quadruple-tank process: a multivariable laboratory
+  process with an adjustable zero.
+\emph{IEEE Transactions on Control Systems Technology}, v. 8 (3), p. 456--465,
+  2000.}
+
+\bibitem{masters:okpanachi:2010}
+\abntrefinfo{OKPANACHI}{OKPANACHI}{2010}
+{OKPANACHI, A.~V.
+\emph{Developing Advanced Control strategies for a 4-Tank Laboratory process}.
+Dissertação (Mestrado) --- Faculty of Technology - Telemark University College,
+  2010.}
+
+\bibitem{article:mercangoz:2006}
+\abntrefinfo{MERCANGÖZ e DOYLE{ }III}{MERCANGÖZ; DOYLE{ }III}{2006}
+{MERCANGÖZ, M.; DOYLE{ }III, F.~J. Distributed model predictive control of a
+  four-tank system.
+\emph{IFAC Proceedings}, v. 39 (2), p. 965--970, 2006.}
+
+\bibitem{tg:anael:2015}
+\abntrefinfo{OLIVEIRA e TAVARES}{OLIVEIRA; TAVARES}{2015}
+{OLIVEIRA, G. A.~D.; TAVARES, A.~R. \emph{Automação de Planta Piloto Industrial
+  de Tanques Acoplados Quádruplos}. Trabalho de graduação -- universidade de
+  brasília, faculdade de tecnologia. Brasília, DF: [s.n.], 2015.}
+
+\end{thebibliography}

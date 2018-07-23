@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{2}{1}{1}
+\beamer@sectionintoc {2}{Formula\c c\~ao do problema}{12}{1}{2}
+\beamer@sectionintoc {3}{Resultado principal}{17}{1}{3}
+\beamer@sectionintoc {4}{Exemplo num\'erico}{21}{1}{4}
+\beamer@sectionintoc {5}{Conclus\~ao}{26}{1}{5}

@@ -1,0 +1,565 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+
+\chapter{Scripts MATLAB\textsuperscript{\textregistered} utilizados}\label{anexo:scripts_matlab}
+	
+
+	\section{Geração de sinal para experimento de tomada de dados de atuadores}
+	\begin{lstlisting}
+entrada = input('Digite 1 para gerar sinal.\nDigite 2 para analise e plots V1 e V2.\nDigite 3 para analise e plots V3 e V4: ');
+if isempty(entrada)
+entrada = 9;
+end
+switch entrada
+case 1
+%Geração do sinal da bomba
+
+deltab = input('Digite o tempo entre mudanças na bomba: '); %Tempo entre mudanca na bomba
+deltav = input('Digite o tempo entre mudanças na valvula: '); %Tempo entre mudanca na valvula
+inicio = input('Digite o tempo de espera para iniciar: '); %Tempo de espera para iniciar primeira vez
+
+%Valores padrao:
+if isempty(deltab)
+    deltab = 25;
+end
+if isempty(deltav)
+    deltav = 30;
+end
+if isempty(inicio)
+    inicio = 80;
+end
+
+B = [0 45 60 75 90 100];
+B = [B B B B B B 0]';
+
+T_B=0;
+for i= 0:5
+    x0= (inicio+i*(deltab*5+deltav));
+    xf = (inicio+(i+1)*deltab*5+i*deltav);
+    T_B = [T_B x0:deltab:xf];
+end
+
+T_B = T_B';
+
+LB = [1 0]';
+T_LB = [0 T_B(end)]';
+STOP = [0 1]';
+T_STOP = [0 T_LB(2)+5]';
+
+
+Va = [30:15:90 100 0]';
+T_Va = [0 (inicio+deltab*5):(deltab*5+deltav):T_B(end)]';
+clear x0 xf i deltav deltab inicio
+save('sinais_bombas_valvulas.mat', 'T_B', 'B', 'T_LB', 'LB','T_Va', 'Va', 'T_STOP', 'STOP');
+
+disp('Pronto!')
+case 2
+%Trabalho com linha
+load('sinais_bombas_valvulas.mat')
+load('Bomba1_calibV1V2.mat')
+load('Bomba2_calibV1V2.mat')
+load('TV1_calibV1V2.mat')
+load('TV2_calibV1V2.mat')
+load('Val1_calibV1V2.mat')
+load('Val2_calibV1V2.mat')
+[i, j] = size(TV1);
+if i>2
+    Bomba1 = Bomba1';
+    Bomba2 = Bomba2';
+    Val1 = Val1';
+    Val2 = Val2';
+    TV1 = TV1';
+    TV2 = TV2';
+end
+tb1 = Bomba1(1,:);
+b1 = Bomba1(2,:);
+tb2 = Bomba2(1,:);
+b2 = Bomba2(2,:);
+
+tvalA = Val1(1,:);
+valA = Val1(2,:);
+tvalB = Val2(1,:);
+valB = Val2(2,:);
+
+ttvA = TV1(1,:);
+tvA = TV1(2,:);
+ttvB = TV2(1,:);
+tvB = TV2(2,:);
+
+%Algoritmos
+
+% Separar os TV1 em 6 partes: ditas por T_Va
+%Cada uma dessas partes, separar em 5 partes ditas por T_B;
+
+
+T=zeros(7,5);
+for i = 1:6
+    for j = 1:6
+       aux =  find(ttvA>=T_B(j+(i-1)*6),1);
+       T(i,j) = aux;
+    end
+end
+T(7,1) = find(ttvA>=T_B(end),1);
+T = [T(1:6,2:6), T(2:7,1)];
+
+%Criando vA(a,b,c), onde:
+%                         'a' varia de 1 a 5 (sinais da bomba)
+%                         'b' é vetor linha de dados da vazão Val1
+%                         'c' varia de 1 a 6 (aberturas da válvula)
+%Tambem cria vetor de vA filtrado, com filtro de janela 'jan'
+%Valvula A
+jan = 12;
+b = (1/jan)*ones(1,jan);
+vA_filt=[];
+tvA_filt = [];
+clear vA fvA
+for i=1:6
+    for j=1:5
+        vA(j,:,i) = tvA(T(i,j):T(i,j+1));
+        fvA(j,:,i) = filter(b,1,vA(j,:,i));
+    end
+    tvA_filt = [tvA_filt;ttvA(T(i,1):T(i,6))];
+    vA_filt = [vA_filt; filter(b,1,tvA(T(i,1):T(i,6)))];
+end
+
+%Criando vB(a,b,c), onde:
+%                         'a' varia de 1 a 5 (sinais da bomba)
+%                         'b' é vetor linha de dados da vazão Val2
+%                         'c' varia de 1 a 6 (aberturas da válvula)
+%Tambem cria vetor de vB filtrado, com filtro de janela 'jan'
+% Valvula B
+jan = 12;
+b = (1/jan)*ones(1,jan);
+vB_filt=[];
+tvB_filt = [];
+clear vB
+for i=1:6
+    for j=1:5
+        vB(j,:,i) = tvB(T(i,j):T(i,j+1));
+        fvB(j,:,i) = filter(b,1,vB(j,:,i));
+    end
+    tvB_filt = [tvB_filt;ttvB(T(i,1):T(i,6))];
+    vB_filt = [vB_filt; filter(b,1,tvB(T(i,1):T(i,6)))];
+end
+
+[~, tam, ~] = size(vA(1,:,1));
+
+% Montando a matriz Valvula1:
+   %Range de valores para usar
+   x0 = 0.5; % Entre 70%
+   xf = 0.8333; % e 90% dos dados
+   aux = [];
+   Valvula1=[];
+   for i=1:6
+       for j=1:5
+           aux = [aux mean(fvA(j,round(tam*x0):round(tam*xf),i))];
+       end
+       if i==1
+           Valvula1=aux;
+       else
+           Valvula1 = [Valvula1; aux];
+       end
+       aux=[];
+   end
+
+ [~, tamb, ~] = size(vB(1,:,1));
+% Montando a matriz Valvula2:
+   %Range de valores para usar
+   x0 = 0.5; 
+   xf = 0.85;
+   aux = [];
+   Valvula2=[];
+   for i=1:6
+       for j=1:5
+           aux = [aux mean(fvB(j,round(tamb*x0):round(tamb*xf),i))];
+       end
+       if i==1
+           Valvula2=aux;
+       else
+           Valvula2 = [Valvula2; aux];
+       end
+       aux=[];
+   end
+   clear aux
+
+   in = input('Deseja realizar os plots? [s/n]: ','s');
+if in=='s'
+%    figure;
+%    plot(ttvA,tvA,tb1,b1/40,tvalA,valA/40);
+%    legend('Vazão 1','Valores da bomba/40','Valores da válvula 1/40')
+%    title('Saída do Transmissor de Vazão 1');
+%    xlabel('Tempo (s)');
+%    ylabel('Vazão (L/s)');
+%    figure;
+%    plot(ttvB,tvB,tb1,b1/40,tvalA,valA/40);
+%    legend('Vazão 1','Valores da bomba/40','Valores da válvula 1/40')
+%    title('Saída do Transmissor de Vazão 2');
+%    xlabel('Tempo (s)');
+%    ylabel('Vazão (L/s)');
+    for i=1:6 %Plot das respostas separadamente (bomba e valvula1)
+        a=i;
+        if i==6
+                a = 85/15;
+        end
+        str = sprintf('Deseja plotar todas as respostas separadamente para válvula 1 em %.0f%%? [s/n]: ',15*(a+1));
+        in = input(str,'s');
+        if in=='s';
+            for j=1:5
+                b=j;
+                if j==5
+                    b=70/15;
+                end
+                figure;
+                plot(ttvA(T(i,j):T(i,j+1)),vA(j,:,i),ttvA(T(i,j):T(i,j+1)),fvA(j,:,i));
+                legend('Não filtrado','Filtrado');
+                str = sprintf('Válvula 1 com %.0f%% de abertura e bomba em %.0f%%',15*(a+1),15*(b+2));
+                title(str);
+                xlabel('Tempo(s)');
+                ylabel('Vazão (L/s)');
+            end
+        end
+    end
+    for i=1:6 %Plot das respostas separadamente (bomba e valvula2)
+        a=i;
+        if i==6
+                a = 85/15;
+        end
+        str = sprintf('Deseja plotar todas as respostas separadamente para válvula 2 em %.0f%%? [s/n]: ',15*(a+1));
+        in = input(str,'s');
+        if in=='s';
+            for j=1:5
+                b=j;
+                if j==5
+                    b=70/15;
+                end
+                figure;
+                plot(ttvB(T(i,j):T(i,j+1)),vB(j,:,i),ttvB(T(i,j):T(i,j+1)),fvB(j,:,i));
+                legend('Não filtrado','Filtrado');
+                str = sprintf('Válvula 1 com %.0f%% de abertura e bomba em %.0f%%',15*(a+1),15*(b+2));
+                title(str);
+                xlabel('Tempo(s)');
+                ylabel('Vazão (L/s)');
+            end
+        end
+    end
+    in = input('Deseja plotar a vazão da valvula 1 para cada abertura? (variando a bomba)? [s/n]: ','s');
+    if in=='s'                
+        for i=1:6
+            a=i;
+            figure;
+            plot(tvA_filt(i,:),tvA(T(i,1):T(i,6)),tvA_filt(i,:),vA_filt(i,:));
+
+            if i==6
+                a = 85/15;
+            end
+            str = sprintf('Valvula 1 com %.0f%% de abertura',15*(a+1));
+            legend('Dados de vazão','Dados com filtro de média móvel')
+            xlabel('Tempo(s)')
+            ylabel('Vazão [L/s]')
+            title(str)
+        end
+    end
+    in = input('Deseja plotar a vazão da valvula 2 para cada abertura? (variando a bomba)? [s/n]: ','s');
+    if in=='s'
+        for i=1:6
+            a=i;
+            figure;
+            plot(tvB_filt(i,:),tvB(T(i,1):T(i,6)),tvB_filt(i,:),vB_filt(i,:));
+            if i==6
+                a = 85/15;
+            end
+            str = sprintf('Valvula 2 com %.0f%% de abertura',15*(a+1));
+            legend('Dados de vazão','Dados com filtro de média móvel')
+            xlabel('Tempo(s)')
+            ylabel('Vazão [L/s]')
+            title(str)
+        end
+    end
+    in = input('Deseja plotar as curvas características da válvula 1?[s/n]: ','s');
+    if in=='s'
+        for i=1:5
+            a=i;
+            if i==5
+                a=70/15;
+            end
+            figure;
+            plot([30:15:90 100], Valvula1(:,i),'o')
+            str=sprintf('Curva característica da Valvula 1 com bomba a %.0f%%',15*(a+2));
+            title(str)
+            xlabel('Abertura da válvula (em %)');
+            ylabel('Vazão (L/s)');
+            xlim([25 105]);
+        end
+    end
+    in = input('Deseja plotar as curvas características da válvula 2?[s/n]: ','s');
+    if in=='s'
+        for i=1:5
+            a=i;
+            if i==5
+                a=70/15;
+            end
+            figure;
+            plot([30:15:90 100], Valvula2(:,i),'o')
+            str=sprintf('Curva característica da Valvula 2 com bomba a %.0f%%',15*(a+2));
+            title(str)
+            xlabel('Abertura da válvula (em %)');
+            ylabel('Vazão (L/s)');
+            xlim([25 105]);
+        end
+    end
+end
+
+disp('Pronto! Verificar matrizes Valvula1 e Valvula2')
+case 3
+load('sinais_bombas_valvulas.mat')
+load('Bomba1_calibV3V4.mat')
+load('Bomba2_calibV3V4.mat')
+load('TV3_calibV3V4.mat')
+load('TV4_calibV3V4.mat')
+load('Val3_calibV3V4.mat')
+load('Val4_calibV3V4.mat')
+[i, j] = size(TV3);
+if i>2
+    Bomba1 = Bomba1';
+    Bomba2 = Bomba2';
+    Val3 = Val3';
+    Val4 = Val4';
+    TV3 = TV3';
+    TV4 = TV4';
+end
+tb1 = Bomba1(1,:);
+b1 = Bomba1(2,:);
+tb2 = Bomba2(1,:);
+b2 = Bomba2(2,:);
+
+tvalA = Val3(1,:);
+valA = Val3(2,:);
+tvalB = Val4(1,:);
+valB = Val4(2,:);
+
+ttvA = TV3(1,:);
+tvA = TV3(2,:);
+ttvB = TV4(1,:);
+tvB = TV4(2,:);
+T=zeros(7,5);
+for i = 1:6
+    for j = 1:6
+       aux =  find(ttvA>=T_B(j+(i-1)*6),1);
+       T(i,j) = aux;
+    end
+end
+T(7,1) = find(ttvA>=T_B(end),1);
+T = [T(1:6,2:6), T(2:7,1)];
+
+%Criando vA(a,b,c), onde:
+%                         'a' varia de 1 a 5 (sinais da bomba)
+%                         'b' é vetor linha de dados da vazão Val1
+%                         'c' varia de 1 a 6 (aberturas da válvula)
+%Tambem cria vetor de vA filtrado, com filtro de janela 'jan'
+%Valvula A
+jan = 12;
+b = (1/jan)*ones(1,jan);
+vA_filt=[];
+tvA_filt = [];
+clear vA fvA
+for i=1:6
+    for j=1:5
+        vA(j,:,i) = tvA(T(i,j):T(i,j+1));
+        fvA(j,:,i) = filter(b,1,vA(j,:,i));
+    end
+    tvA_filt = [tvA_filt;ttvA(T(i,1):T(i,6))];
+    vA_filt = [vA_filt; filter(b,1,tvA(T(i,1):T(i,6)))];
+end
+
+%Criando vB(a,b,c), onde:
+%                         'a' varia de 1 a 5 (sinais da bomba)
+%                         'b' é vetor linha de dados da vazão Val2
+%                         'c' varia de 1 a 6 (aberturas da válvula)
+%Tambem cria vetor de vB filtrado, com filtro de janela 'jan'
+% Valvula B
+jan = 12;
+b = (1/jan)*ones(1,jan);
+vB_filt=[];
+tvB_filt = [];
+clear vB
+for i=1:6
+    for j=1:5
+        vB(j,:,i) = tvB(T(i,j):T(i,j+1));
+        fvB(j,:,i) = filter(b,1,vB(j,:,i));
+    end
+    tvB_filt = [tvB_filt;ttvB(T(i,1):T(i,6))];
+    vB_filt = [vB_filt; filter(b,1,tvB(T(i,1):T(i,6)))];
+end
+
+[~, tam, ~] = size(vA(1,:,1));
+
+% Montando a matriz Valvula3:
+   %Range de valores para usar
+   x0 = 0.66; % Entre 66%
+   xf = 0.8333; % e 83% dos dados
+   aux = [];
+   Valvula3=[];
+   for i=1:6
+       for j=1:5
+           aux = [aux mean(vA(j,round(tam*x0):round(tam*xf),i))];
+       end
+       if i==1
+           Valvula3=aux;
+       else
+           Valvula3 = [Valvula3; aux];
+       end
+       aux=[];
+   end
+
+ [~, tamb, ~] = size(vB(1,:,1));
+% Montando a matriz Valvula4:
+   %Range de valores para usar
+   x0 = 0.66; 
+   xf = 0.833;
+   aux = [];
+   Valvula4=[];
+   for i=1:6
+       for j=1:5
+           aux = [aux mean(vB(j,round(tamb*x0):round(tamb*xf),i))];
+       end
+       if i==1
+           Valvula4=aux;
+       else
+           Valvula4 = [Valvula4; aux];
+       end
+       aux=[];
+   end
+   clear aux
+
+   in = input('Deseja realizar os plots? [s/n]: ','s');
+if in=='s'
+    for i=1:6 %Plot das respostas separadamente (bomba e valvula1)
+        a=i;
+        if i==6
+                a = 85/15;
+        end
+        str = sprintf('Deseja plotar todas as respostas separadamente para válvula 3 em %.0f%%? [s/n]: ',15*(a+1));
+        in = input(str,'s');
+        if in=='s';
+            for j=1:5
+                b=j;
+                if j==5
+                    b=70/15;
+                end
+                figure;
+                plot(ttvA(T(i,j):T(i,j+1)),vA(j,:,i),ttvA(T(i,j):T(i,j+1)),fvA(j,:,i));
+                legend('Não filtrado','Filtrado');
+                str = sprintf('Válvula 3 com %.0f%% de abertura e bomba em %.0f%%',15*(a+1),15*(b+2));
+                title(str);
+                xlabel('Tempo(s)');
+                ylabel('Vazão (L/s)');
+            end
+        end
+    end
+    for i=1:6 %Plot das respostas separadamente (bomba e valvula2)
+        a=i;
+        if i==6
+                a = 85/15;
+        end
+        str = sprintf('Deseja plotar todas as respostas separadamente para válvula 4 em %.0f%%? [s/n]: ',15*(a+1));
+        in = input(str,'s');
+        if in=='s';
+            for j=1:5
+                b=j;
+                if j==5
+                    b=70/15;
+                end
+                figure;
+                plot(ttvB(T(i,j):T(i,j+1)),vB(j,:,i),ttvB(T(i,j):T(i,j+1)),fvB(j,:,i));
+                legend('Não filtrado','Filtrado');
+                str = sprintf('Válvula 4 com %.0f%% de abertura e bomba em %.0f%%',15*(a+1),15*(b+2));
+                title(str);
+                xlabel('Tempo(s)');
+                ylabel('Vazão (L/s)');
+            end
+        end
+    end
+    in = input('Deseja plotar a vazão da valvula 3 para cada abertura? (variando a bomba)? [s/n]: ','s');
+    if in=='s'                
+        for i=1:6
+            a=i;
+            figure;
+            plot(tvA_filt(i,:),tvA(T(i,1):T(i,6)),tvA_filt(i,:),vA_filt(i,:));
+
+            if i==6
+                a = 85/15;
+            end
+            str = sprintf('Valvula 3 com %.0f%% de abertura',15*(a+1));
+            legend('Dados de vazão','Dados com filtro de média móvel')
+            xlabel('Tempo(s)')
+            ylabel('Vazão [L/s]')
+            title(str)
+        end
+    end
+    in = input('Deseja plotar a vazão da valvula 4 para cada abertura? (variando a bomba)? [s/n]: ','s');
+    if in=='s'
+        for i=1:6
+            a=i;
+            figure;
+            plot(tvB_filt(i,:),tvB(T(i,1):T(i,6)),tvB_filt(i,:),vB_filt(i,:));
+            if i==6
+                a = 85/15;
+            end
+            str = sprintf('Valvula 4 com %.0f%% de abertura',15*(a+1));
+            legend('Dados de vazão','Dados com filtro de média móvel')
+            xlabel('Tempo(s)')
+            ylabel('Vazão [L/s]')
+            title(str)
+        end
+    end
+    in = input('Deseja plotar as curvas características da válvula 3?[s/n]: ','s');
+    if in=='s'
+        for i=1:5
+            a=i;
+            if i==5
+                a=70/15;
+            end
+            figure;
+            plot([30:15:90 100], Valvula3(:,i),'o')
+            str=sprintf('Curva característica da Valvula 3 com bomba a %.0f%%',15*(a+2));
+            title(str)
+            xlabel('Abertura da válvula (em %)');
+            ylabel('Vazão (L/s)');
+            grid;
+            xlim([25 100]);
+        end
+    end
+    in = input('Deseja plotar as curvas características da válvula 4?[s/n]: ','s');
+    if in=='s'
+        for i=1:5
+            a=i;
+            if i==5
+                a=70/15;
+            end
+            figure;
+            plot([30:15:90 100], Valvula4(:,i),'o')
+            str=sprintf('Curva característica da Valvula 4 com bomba a %.0f%%',15*(a+2));
+            title(str)
+            xlabel('Abertura da válvula (em %)');
+            ylabel('Vazão (L/s)');
+            grid;
+            xlim([25 100]);
+        end
+    end
+end
+
+disp('Pronto! Verificar matrizes Valvula3 e Valvula4')
+
+otherwise
+disp('ERRO');
+end
+apaga = input('Apagar variaveis auxiliares? [s/n]','s');
+if apaga=='s'
+clear deltab tamb tam tb1 tb2 ttvA ttvB tvA tvB tvalA tvalB carrega i inicio j aux b1 b2 Val1 Val2 Val4 Val3 TV1 TV2 TV4 TV3 T Bomba2 Bomba1 valA valB x0 xf
+clear vA vB vA_filt vB_filt Va b ans fvA fvB jan tvA_filt tvB_filt
+end
+clear entrada apaga carrega in a str
+
+	\end{lstlisting}
+	
+%	\section{Geração de sinal para experimento de tomada de dados de atuadores}
+%	\begin{lstlisting}

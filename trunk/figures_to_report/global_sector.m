@@ -1,0 +1,10 @@
+x = -10:0.1:10;
+a1 = 92*x;
+a2 = 28*x;
+% f = tan(x);
+f = 0.5*x.^3-x.^2+30*x;
+plot(x, a1, 'r', x, a2, 'm', x, f,'b');
+h = legend('a_1x(t)', 'a_2x(t)','f(x(t))');
+xlabel('x(t)');
+set(gca,'ytick',[0]);
+set(gca,'xtick',[0]);

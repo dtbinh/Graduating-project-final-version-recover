@@ -1,0 +1,18 @@
+\chapter{Conclusões}\label{CapConclusoes}
+
+Neste trabalho foi feito o estudo da análise estabilidade de sistemas não-lineares por meio do Teorema de estabilidade de Lyapunov via LMIs. Inicialmente considerou-se o sistema com dinâmica não-linear, a partir do qual se obteve o retrato de fase do sistema para a região no espaço de estados. A partir do retrato de fase foi possível verificar qualitativamente o comportamento dos pontos de equilíbrio do sistema, podendo-se classificá-los, dentre outros, em estável, assintoticamente estável e instável. O ponto de equilíbrio é estável quando as trajetórias de resposta para diferentes pontos iniciais sempre se aproximam para uma região próxima ao ponto de equilíbrio. Quando as trajetórias tendem ao ponto de equilíbrio à medida que o tempo tende ao infinito, este ponto é dito como assintoticamente estável. Caso as trajetórias se afastem, o ponto é dito como instável. Este princípio foi utilizado no decorrer do trabalho para se classificar analisar a estabilidade de pontos de equilíbrio.
+
+Em seguida, foi obtido o modelo fuzzy Takagi-Sugeno dos sistemas não-lineares em estudo e verificou-se que esta modelagem representa o modelo linearizado de forma exata. Obtida esta modelagem, que consiste no conjunto de sistemas linearizados associados na forma de vértices, iniciou-se tópico principal deste projeto, que consistiu na análise de estabilidade e na estimativa da região de atração para pontos de equilíbrio na origem. Utilizou-se o artificio de mudança de variável para deslocar o ponto de equilíbrio do sistema para a origem, sem que houvesse perda de generalidade, de forma a se abranger um número maior de sistemas.
+
+No capítulo sobre análise de estabilidade utilizou-se o Teorema de Estabilidade de Lyapunov, LMIs e o Teorema de Finslar para se propor um novo Teorema de análise de estabilidade de sistemas fuzzy T-S modelados segundo a técnica de não-linearidade por setor local. O objetivo com a proposta deste Teorema foi obter condições menos conservadoras, tais que a análise de estabilidade garantisse resultados mais abrangentes. Fez-se uso de outros métodos já existentes na literatura para serem comparados com o método aqui proposto.
+
+As comparações do método proposto neste trabalho com os métodos encontrados na literatura permitiram ver que o nosso método gera melhores resultados para um valor fixo de $\lambda = 20$, visto que foi o único que garantiu a estabilidade em toda a região $C$ para a qual o sistema é definido. Fixando-se a região de análise em todo o domínio $C$, variou-se o valor de $\lambda$ até se obter os valores tais que as LMIs necessárias para a estabilidade não gerassem resultado. Assim, verificou-se que o nosso método foi o melhor quando analisado o limitante superior, uma vez que fora o único para o qual se verificou que não há limitante superior de $\lambda$ para o qual a origem deixe de ser estável para a região $C$. Já para o limitante inferior, o nosso método gerou o pior resultado.
+
+Mantendo-se $\lambda = 20$, foi feito uma estimativa da região de atração para os métodos utilizados até agora, utilizando-se o mesmo critério de maximização para todos. Verificou-se que o nosso método gera o melhor resultado para esta estimativa. Foi sugerido um novo teorema para a maximização da estimativa da região de atração, o qual não foi bem sucedido.
+
+Como trabalhos futuros sugere-se:
+\begin{enumerate}
+\item Comparar com métodos mais recentes na literatura;
+\item Alterar os valores dos pesos $\omega_1$ e $\omega_2$ do Teorema \ref{th:reg_atrac_1} para se obter uma melhor estimativa de região de atração por meio deste;
+\item Aumentar os graus dos simplexes para os vértices P e X do resultado principal, em busca de melhores resultados.
+\end{enumerate}

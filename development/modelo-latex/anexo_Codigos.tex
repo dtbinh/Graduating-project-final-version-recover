@@ -1,0 +1,70 @@
+%TCIDATA{LaTeXparent=0,0,relatorio.tex}
+
+\chapter{\textit{Plot} Retrato de Fase\label{AnEsquematicos}
+
+x1 = x1\_min:x1\_step:x1\_max;
+
+x2 = x2\_min:x2\_step:x2\_max;
+
+[X1,X2] = meshgrid(x1,x2);
+
+F1= f1(X1, X2);
+
+F2= f2(X2, X2);
+
+hold off
+
+figure;clf
+
+streamslice(X1,X2,F1,F2,2); \% https://www.mathworks.com/help/matlab/ref/streamslice.html
+
+xlabel('x\_1');ylabel('x\_2');
+
+line([0],[0],'marker','o','linestyle','none','markerfacecolor','r') \%plots origin as equilibrium point
+
+hold off;
+
+\chapter{Plot Condição de Inclusão (Estimativa de região de atração) para P constante\label{AnEsquematicos
+
+function level\_curve(P, gamma, color)
+
+\%Plots the level curve V(x) = x'*P*x = gamma, given P and gamma.
+
+for i = 1:length(P)
+
+
+if length(P) > 1
+
+
+
+Pi = P{i{1;
+else
+Pi = P{i;
+end
+%a = Pi(1,1);
+b = Pi(1,2); % = Pi(2,1);
+c = Pi(2,2);
+dP = det(Pi);
+
+%[V,D] = eig(Pi);
+%v1=V(:,1);
+%v2=V(:,2);
+%figure;plot(v1(1),v1(2),'r*',v2(1),v2(2),'b*');
+%hold on
+
+%Calculo
+x1max=sqrt(c*gamma/dP);
+steps = (2*x1max)/1e4;
+x1=-x1max:steps:x1max;
+x2a=($-b*x1+sqrt(c*gamma-x1.^2*dP))/c$;
+x2b=($-b*x1-sqrt(c*gamma-x1.^2*dP))/c$;
+
+%Plot
+hold on
+plot(x1,x2a,color)
+plot(x1,x2b,color)
+hold off
+grid
+volume = det(inv(Pi)*gamma); 
+end
+end
